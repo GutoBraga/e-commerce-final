@@ -1,3 +1,15 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    background-color: #696969;
+}*/
+
+.home{
+    max-width: 1460px;
+    background-color: #f2f2f2;
+    padding: 0;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -8,6 +20,220 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+/*ACIMA DO MENU*/
+.superior-topo {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.superior-topo .text-input {
+    width: 420px;
+}
+
+.superior-topo a {
+    text-decoration: none;
+    color: #016f33;
+    font-style: italic;
+    text-align: justify;
+}
+
+.logo-home {
+    margin: 0 20px 10px 0;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
+
+
+@media screen and (max-width: 520px) {
+    .superior-topo{display: block;}
+}
+
+#botao-busca {
+    background: #016f33;
+
+}
+
+#imagem-busca {
+    width: 24px;
+    height: 24px;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+.pedidos {
+    display: flex;
+    align-items: center;
+}
+
+.img-red img {
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+}
+
+.left-cart {
+    width: 40px;
+    height: 53px;
+    background-image: url('src/assets/images/left.png');
+}
+
+.center-cart {
+    background-color: #016f33;
+    height: 43px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-cart {
+    width: 15px;
+    height: 43px;
+    background-image: url('src/assets/images/right.png');
+}
+
+.cart {
+    display: flex;
+}
+
+.quantity {
+    color: #FFFFFF;
+    font-style: italic;
+}
+
+.value {
+    color: #f1a658;
+    font-style: italic;
+}
+
+/*MENU CATEGORIA*/
+.categoria-header ul {
+    background: #016f33;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.categoria-header ul li {
+    align-items: center;
+}
+
+@media screen and (max-width: 520px) {
+    .categoria-header ul{display: block;}
+}
+
+.categoria-header-links a {
+    color: white!important;
+    margin: 0 20px;
+}
+
+/*FOOTER*/
+.footer-separacao {
+    background: #016f33;
+    height: 40px;
+    margin: 20px 0;
+}
+
+.links-footer {
+    margin: 40px 40px 60px 40px;
+    text-align: left; 
+}
+.links-footer-pos {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.links-footer h5 {
+    color: #016f33;
+}
+
+.links-footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.links-footer a:hover {
+    color: #016f33;
+}
+
+.contatos {
+    background-color: #e6e6e6;
+    border: black;
+    padding: 25px 15px;
+    margin: 0 20%;
+}
+
+.item-contato {
+    padding: 20px 60px 20px 60px;
+    line-height: 1;
+}
+
+.item-contato strong {
+    color: #016f33;
+}
+
+#anvisa-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0 0;
+}
+
+.pagamentos-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pagamentos-footer img {
+    margin: 15px 25px 15px 0;
+}
+
+.info-footer {
+    margin: 20px 0;
+
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo-footer {
+    max-width: 150px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+.copyr {
+    height: 40px;
+    margin: 20px 0 0 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #e6e6e6;
+}
+
+@media screen and (max-width: 520px) {
+    .copyr{height: 80px;}
+}
+
+.copyr strong {
+    color: #016f33;
 }
 
 
