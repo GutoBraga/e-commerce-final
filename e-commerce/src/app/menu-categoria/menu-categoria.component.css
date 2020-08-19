@@ -1,0 +1,20 @@
+/*MENU CATEGORIA*/
+.categoria-header ul {
+    background: #016f33;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.categoria-header ul li {
+    align-items: center;
+}
+
+@media screen and (max-width: 520px) {
+    .categoria-header ul{display: block;}
+}
+
+.categoria-header-links a {
+    color: white!important;
+    margin: 0 20px;
+}
