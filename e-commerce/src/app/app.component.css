@@ -1,0 +1,421 @@
+
+
+.home{
+  max-width: 1460px;
+  background-color: white;
+  padding: 0;
+} 
+
+ul {
+  list-style: none;
+}
+
+/*ACIMA DO MENU*/
+.superior-topo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.superior-topo .text-input {
+  width: 420px;
+}
+
+.superior-topo p {
+  font-style: italic;
+  text-align: justify;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  margin: 0 20px 10px 0;
+}
+
+.buscar {
+  width: 40%;
+}
+
+.text-input {
+  width: 300px;
+}
+
+#botao-busca {
+  background: #016f33;
+
+}
+
+#imagem-busca {
+  width: 24px;
+  height: 24px;
+}
+
+.aproximar {
+  
+}
+
+.icone-topo {
+  width: 24px;
+  height: 24px;
+}
+
+.left-cart {
+  width: 40px;
+  height: 53px;
+  background-image: url('src\assets\images\left.png');
+}
+
+.center-cart {
+  background-color: #016f33;
+  height: 43px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-cart {
+  width: 15px;
+  height: 43px;
+  background-image: url('src\assets\images\right.png');
+}
+
+.cart {
+  display: flex;
+}
+
+.quantity {
+  color: #FFFFFF;
+  font-style: italic;
+}
+
+.value {
+  color: #f1a658;
+  font-style: italic;
+}
+
+/*MENU CATEGORIA*/
+.categoria-header {
+  background: #016f33;
+  display: flex;
+  align-items: center;
+}
+
+.categoria-header ul li {
+  float: left;
+}
+
+.categoria-header ul a {
+  padding: 5px 20px;
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+
+
+
+/* SUB PAGINAS CENTRAL DE ATENDIMENTO*/
+
+
+.container-texto{
+
+  background-color: #A9E7E7;
+  display: inline-block;
+  border-radius: 20px;
+  padding: 80px;
+  font-size: 20px;
+  margin: 50px  200px;
+
+}
+
+
+
+
+.pag-titulo{
+
+
+  background-color:#016f33;
+  height: 100px;
+  border-radius: 30px;
+  padding: 30px;
+  margin: 0px 300px;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  margin-top: 80px;
+
+
+
+
+}
+
+.tituloContainer{
+
+  font-size: 24px;
+  
+  
+}
+
+.container-texto strong{
+
+  font-size: 25px;
+             
+}
+      
+.container-texto p strong{
+      
+  font-size: 20px;
+         
+         
+}
+
+.voltarLink {
+
+
+font-size: 25px;
+text-align: right;
+display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FOOTER*/
+.footer-separacao {
+  background: #016f33;
+  height: 40px;
+  margin: 20px 0;
+}
+
+.links-footer {
+  margin: 40px 40px 60px 40px;
+  text-align: left; 
+}
+.links-footer-pos {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.links-footer h5 {
+  color: #016f33;
+}
+
+.links-footer a {
+  color: black;
+  text-decoration: none;
+}
+
+.links-footer a:hover {
+  color: #016f33;
+}
+
+.contatos {
+  background-color: #e6e6e6;
+  border: black;
+  padding: 25px 15px;
+  margin: 0 200px;
+}
+
+.item-contato {
+  padding: 20px 60px 20px 60px;
+  line-height: 1;
+}
+
+.item-contato strong {
+  color: #016f33;
+}
+
+#anvisa-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 0 0;
+}
+
+.pagamentos-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pagamentos-footer img {
+  margin: 15px 25px 15px 0;
+}
+
+.info-footer {
+  margin: 20px 0;
+
+}
+.logo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo-footer {
+  max-width: 150px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+.copyr {
+  height: 40px;
+  margin: 20px 0 0 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #f1f1f1;
+}
+
+.copyr strong {
+  color: #016f33;
+}
+
+/* estilo tela de pagamento */
+.cont-pagamento {
+  top: 2vh;
+  left: 2vw;
+  background-color: white;
+  height: 100px;
+}
+
+.logo-pagamento {
+  height: 147px;
+  background-color: rgb(226,223,223);
+}
+.logo-rd{
+  left: 9vw;
+  margin-left: 10vw;
+  margin-top: 20px;
+  height: 100px;
+  width: 100px;
+  background-image: url(src\assets\images\logo-raia-redimensionado.png);
+  background-position: center;
+  background-size: 100px;
+}
+.fone{
+  margin-left:16vw;
+  margin-top: 8vh;
+  height: 50px;
+  width: 50px;
+  background-image: url(src\assets\images\fone-verde.png);
+  background-size: 50px;
+
+}
+.central-atendimento{
+  text-decoration: none;
+  margin-top: 10vh;
+}
+.central-atendimento:hover{
+  text-decoration: none;
+  background: none;
+}
+
+.footer-pagamento {
+  top: 10vh;
+  bottom: 4vh;
+  height: 147px;
+  background-color: rgb(226,223,223);
+}
+
+
+
+.menu-pag{
+  margin-top: 30px;
+}
+
+.itens-menu{
+  margin-left: 10vw;
+}
+.cont{
+   margin-top: 40px;
+   width: 500px;
+   border-width: 1px;
+   border-style: solid;
+   border-color:rgb(226,223,223);;
+   background-color: transparent;
+}
+.credito{
+  height: 600px;
+  margin-right: 6vw;
+}
+.boleto{
+  
+}
+.resumo-pedido{
+  
+}
+
+.opcao{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.bandeira{
+  margin-top:20px;
+  width: 60px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.itau{ 
+  background-image: url(src\assets\images\341.png);
+}
+.brad{
+  background-image: url(src\assets\images\237.png);
+}
+.barra-boleto{
+  background-image: url(src\assets\images\boleto.jpg);
+}
+
+.input-radio-1{
+   margin-top: 10px;
+}
+
+.label-pagamento{
+   margin-top: 7px; 
+}
+.dim{
+  font-size: 10px;
+  margin-left: 20vw;
+  margin-top: 40px;
+}
+.numero-center{
+  margin-left: 10vw;
+  font-size: 40px;
+}
+.termos-uso{
+  font-size: 20px;
+  margin-top: 50px;
+  margin-left: 13vw;
+}
+
+
+
+
+
+
