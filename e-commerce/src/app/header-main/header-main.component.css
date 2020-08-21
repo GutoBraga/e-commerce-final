@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*ACIMA DO MENU*/
+.superior-topo {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.superior-topo .text-input {
+    width: 420px;
+}
+
+.superior-topo a {
+    text-decoration: none;
+    color: #016f33;
+    font-style: italic;
+    text-align: justify;
+}
+
+.logo-home {
+    margin: 0 20px 10px 0;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
+
+
+@media screen and (max-width: 520px) {
+    .superior-topo{display: block;}
+}
+
+#botao-busca {
+    background: #016f33;
+
+}
+
+#imagem-busca {
+    width: 24px;
+    height: 24px;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+.pedidos {
+    display: flex;
+    align-items: center;
+}
+
+.img-red img {
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+}
+
+.left-cart {
+    width: 40px;
+    height: 53px;
+    background-image: url('src/assets/images/left.png');
+}
+
+.center-cart {
+    background-color: #016f33;
+    height: 43px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-cart {
+    width: 15px;
+    height: 43px;
+    background-image: url('src/assets/images/right.png');
+}
+
+.cart {
+    display: flex;
+}
+
+.quantity {
+    color: #FFFFFF;
+    font-style: italic;
+}
+
+.value {
+    color: #f1a658;
+    font-style: italic;
+}

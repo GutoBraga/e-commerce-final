@@ -9,6 +9,12 @@ import { BodyidentificacaoComponent } from './bodyidentificacao/bodyidentificaca
 import { BodyloginComponent } from './bodylogin/bodylogin.component';
 import { BodyentregaComponent } from './bodyentrega/bodyentrega.component';
 import { BodyminhacontaComponent } from './bodyminhaconta/bodyminhaconta.component';
+import { CaroselComponent } from './carosel/carosel.component';
+import { FooterMainComponent } from './footer-main/footer-main.component';
+import { MenuCategoriaComponent } from './menu-categoria/menu-categoria.component';
+import { DestaquesCaroselComponent } from './destaques-carosel/destaques-carosel.component';
+import { ProdutoDetalhesComponent } from './produto-detalhes/produto-detalhes.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +26,12 @@ import { BodyminhacontaComponent } from './bodyminhaconta/bodyminhaconta.compone
     BodyloginComponent,
     BodyentregaComponent,
     BodyminhacontaComponent
+    CaroselComponent,
+    FooterMainComponent,
+    MenuCategoriaComponent,
+    DestaquesCaroselComponent,
+    ProdutoDetalhesComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule

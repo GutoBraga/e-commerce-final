@@ -1,0 +1,70 @@
+
+
+<div class="row historico-titulo">
+    <div class="col-lg-12">
+        <h2>Histórico de compras </h2>
+
+    </div>  
+
+</div>
+
+
+
+
+<div class="hist"> 
+
+    <div *ngFor="let quant of qtd" class="row historico-tabela" >
+        <div  class="historico-fundo col-lg-9">
+
+            <div class="row historico">
+                <div class="col-lg-12">
+                    <ul>
+                        <div class="col-3 item">
+                            <p> {{ quant.data  }} </p>
+                        </div>
+                        <div class="col-3 item">
+                            <p> Produto </p>
+                        </div>
+                        <div class="col-3 item">
+                            <p> Quantidade </p>
+                        </div>
+                        <div class="col-3 item">
+                            <p> Valor Unitário </p>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div *ngFor="let pedido of pedidos" class="row">
+                <div class="col-3 item">
+                    <img [src]="pedido.img">
+    
+                </div>
+                <div class="col-3 item">
+                    <p>{{ pedido.nome }}</p>
+                </div>
+                <div class="col-3 item">
+                    <p>{{ pedido.quantidade }}</p>
+                </div>
+                <div class="col-3 item">
+                    <p>{{ pedido.valor }}</p>
+                </div>
+            
+            </div>
+
+            
+
+        </div>
+
+        <div  class="col-3 botao">
+        
+            <button type="button" class="btn btn-success">Comprar novamente</button>
+    
+        </div> 
+
+
+           
+    </div>
+
+</div>
+
