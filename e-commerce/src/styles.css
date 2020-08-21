@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body
+{
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body
+{
+    height: 900px;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body{
+
+    height: 600px;
+  }
+}
+
+:root {
+    --laranjatexto: #f1a658;
+    --cinzatexto: #8d8178;
+    --verdetexto: #016f33;
+    --corheader-footer: #f2f0ee;
+}

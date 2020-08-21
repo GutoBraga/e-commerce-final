@@ -1,0 +1,79 @@
+html,
+body
+{
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body
+{
+    height: 1000px;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body{
+
+    height: 600px;
+  }
+}
+
+.logosuperior {
+    margin-top: -15px;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
+
+.logosSuperiores {
+  margin-right: 5px;
+  margin-top: 5px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.retira-loja {
+  /*Imagem receber no endereço*/
+  max-width: 40px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+}
+
+.recebe-endereco {
+  /*Imagem receber na loja*/
+  max-width: 40px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+}
+
+.text-menu{
+  color: var(--cinzatexto);
+}
+
+.botao-continuar{
+  margin-left: 20px;
+}
+
+.footerCad {
+  text-align: center;
+  background: var(--corheader-footer);
+  padding: 40px;
+  margin-top: 35px;
+  position: relative;
+  bottom: 0;
+}
+
+.img-footer {
+  margin-left: 150px;
+}
+
+:root {
+  --laranjatexto: #f1a658;
+  --cinzatexto: #8d8178;
+  --verdetexto: #016f33;
+  --corheader-footer: #f2f0ee;
+}
