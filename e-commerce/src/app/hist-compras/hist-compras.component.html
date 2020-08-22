@@ -13,20 +13,85 @@
 
 <div class="hist"> 
 
-    <div *ngFor="let quant of qtd" class="row historico-tabela" >
+    <div  class="row historico-tabela" *ngFor= "let ItensPedido of ItensPedido"> 
+        <div  class="historico-fundo col-lg-9" >
+
+            <div class="row historico"  >
+                <div class="col-lg-12 ">
+                    <ul >
+                       
+                            <p> Data {{ItensPedido.data}}</p>
+                       
+                            <p> Produto </p>
+                       
+                      
+                            <p> Quantidade  </p>
+                        
+                      
+                            <p> Valor Unitário </p>
+                    </ul>
+                </div>     
+                  
+               
+
+                <div class="col-lg-12 item">
+                
+                    <img src="../../assets/images/caixa-remedio.jpg">
+              
+                    <p>{{ItensPedido.descricao}}</p>
+                
+
+                
+                    <p>{{ ItensPedido.quantidade }}</p>
+                  
+
+           
+                    <p>{{ ItensPedido.valor }}</p>
+         
+                </div>
+
+
+            </div>
+
+            <!-- <div *ngFor= "let ItensPedido of ItensPedido">
+        
+                  
+        
+            </div>  -->
+
+            
+
+        </div>
+
+        <div  class="col-3 botao">
+        
+            <button type="button" class="btn btn-success">Comprar novamente</button>
+    
+        </div> 
+
+
+           
+    </div>  
+
+
+
+    <!-- *ngFor="let quant of qtd"  -->
+
+
+     <!-- <div   class="row historico-tabela" > 
         <div  class="historico-fundo col-lg-9">
 
             <div class="row historico">
                 <div class="col-lg-12">
                     <ul>
-                        <div class="col-3 item">
-                            <p> {{ quant.data  }} </p>
+                        <div class="col-3 item">       
+                            <p>   ItensPedido.data  </p>
                         </div>
                         <div class="col-3 item">
                             <p> Produto </p>
                         </div>
                         <div class="col-3 item">
-                            <p> Quantidade </p>
+                            <p> Quantidade  </p>
                         </div>
                         <div class="col-3 item">
                             <p> Valor Unitário </p>
@@ -35,19 +100,19 @@
                 </div>
             </div>
 
-            <div *ngFor="let pedido of pedidos" class="row">
+            <div *ngFor= "let ItensPedido of ItensPedido" class="row">
                 <div class="col-3 item">
                     <img [src]="pedido.img">
     
                 </div>
                 <div class="col-3 item">
-                    <p>{{ pedido.nome }}</p>
+                    <p>{{ItensPedido.descricao}}</p>
                 </div>
                 <div class="col-3 item">
-                    <p>{{ pedido.quantidade }}</p>
+                    <p>{{ ItensPedido.quantidade }}</p>
                 </div>
                 <div class="col-3 item">
-                    <p>{{ pedido.valor }}</p>
+                    <p>{{ ItensPedido.valor }}</p>
                 </div>
             
             </div>
@@ -64,7 +129,8 @@
 
 
            
-    </div>
+    </div>  
+ -->
 
 </div>
 
