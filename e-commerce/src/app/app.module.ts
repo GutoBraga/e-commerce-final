@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderMainComponent } from './header-main/header-main.component';
@@ -15,6 +17,7 @@ import { MenuCategoriaComponent } from './menu-categoria/menu-categoria.componen
 import { DestaquesCaroselComponent } from './destaques-carosel/destaques-carosel.component';
 import { ProdutoDetalhesComponent } from './produto-detalhes/produto-detalhes.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import {HistComprasComponent} from './hist-compras/hist-compras.component';
 
 @NgModule({
   declarations: [
@@ -25,16 +28,19 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     BodyidentificacaoComponent,
     BodyloginComponent,
     BodyentregaComponent,
-    BodyminhacontaComponent
+    BodyminhacontaComponent,
     CaroselComponent,
     FooterMainComponent,
     MenuCategoriaComponent,
     DestaquesCaroselComponent,
     ProdutoDetalhesComponent,
-    CadastroComponent
+    CadastroComponent,
+    HistComprasComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

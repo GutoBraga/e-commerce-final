@@ -5,6 +5,7 @@ import { HeaderentregaComponent } from './headerentrega/headerentrega.component'
 import { FooterentregaComponent } from './footerentrega/footerentrega.component';
 import { BodyidentificacaoComponent } from './bodyidentificacao/bodyidentificacao.component';
 import { BodyloginComponent } from './bodylogin/bodylogin.component';
+import { HistComprasComponent } from './hist-compras/hist-compras.component';
 
 
 export const routes: Routes = [
@@ -19,27 +20,16 @@ export const routes: Routes = [
     {
         path: 'login',
         component: BodyloginComponent
-    }
-];
-
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule} from '@angular/router';
-import { HistComprasComponent } from './hist-compras/hist-compras.component';
-
-export const rotas: Routes = [
-   
+    },
     {
         path: 'histCompras',
         component: HistComprasComponent
     }
-
 ];
-
+ 
+ 
 @NgModule({
-    imports: [RouterModule.forRoot(rotas)],
+    imports: [RouterModule.forRoot(routes)],
     exports:[RouterModule]
 })
 
