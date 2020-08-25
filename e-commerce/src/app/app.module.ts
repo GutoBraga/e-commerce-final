@@ -19,6 +19,11 @@ import { ProdutoDetalhesComponent } from './produto-detalhes/produto-detalhes.co
 import { CadastroComponent } from './cadastro/cadastro.component';
 import {HistComprasComponent} from './hist-compras/hist-compras.component';
 import { CestaComponent } from './cesta/cesta.component';
+import { AtendimentoComponent } from './atendimento/atendimento.component';
+import { RegrasFreteComponent } from './atendimento/regras-frete/regras-frete.component';
+import { TrocaDevolucaoComponent } from './atendimento/troca-devolucao/troca-devolucao.component';
+import { FormaPagamentoComponent } from './atendimento/forma-pagamento/forma-pagamento.component';
+import { AcompanhePedidoComponent } from './atendimento/acompanhe-pedido/acompanhe-pedido.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +43,11 @@ import { CestaComponent } from './cesta/cesta.component';
     CadastroComponent,
     HistComprasComponent,
     CestaComponent,
+    AtendimentoComponent,
+    RegrasFreteComponent,
+    TrocaDevolucaoComponent,
+    FormaPagamentoComponent,
+    AcompanhePedidoComponent,
   ],
   imports: [
     BrowserModule,
