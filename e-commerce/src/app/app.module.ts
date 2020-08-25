@@ -18,6 +18,7 @@ import { DestaquesCaroselComponent } from './destaques-carosel/destaques-carosel
 import { ProdutoDetalhesComponent } from './produto-detalhes/produto-detalhes.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import {HistComprasComponent} from './hist-compras/hist-compras.component';
+import { CestaComponent } from './cesta/cesta.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {HistComprasComponent} from './hist-compras/hist-compras.component';
     ProdutoDetalhesComponent,
     CadastroComponent,
     HistComprasComponent,
+    CestaComponent,
   ],
   imports: [
     BrowserModule,
