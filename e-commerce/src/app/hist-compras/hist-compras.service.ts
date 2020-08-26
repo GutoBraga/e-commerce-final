@@ -13,7 +13,7 @@ import {Pedido} from './pedidos.model';
   
     constructor(private http: HttpClient) { }
   
-    private readonly API = 'http://localhost:3000/itens';
+    private readonly API = 'http://localhost:3000/nf';
   
     getPedidos() {
       return this.http.get<Pedido[]>(this.API);

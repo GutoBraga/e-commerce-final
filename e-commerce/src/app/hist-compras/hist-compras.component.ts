@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { HistComprasService } from './hist-compras.service';
 import { Pedido } from './pedidos.model';
-
+ 
 
 
 
@@ -13,7 +13,8 @@ import { Pedido } from './pedidos.model';
 })
 export class HistComprasComponent implements OnInit {
 
-  ItensPedido: Pedido[];
+  pedidos: Pedido[];
+ 
 
   constructor(private pedidoService: HistComprasService) { }
 
@@ -24,7 +25,7 @@ export class HistComprasComponent implements OnInit {
   }
 
   listarTodas() {
-    this.pedidoService.getPedidos().subscribe(response => this.ItensPedido = response);
+    this.pedidoService.getPedidos().subscribe(response => this.pedidos = response);
   }
 
 
