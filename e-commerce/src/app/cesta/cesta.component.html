@@ -16,21 +16,21 @@
                 <div class="row ">
                     <div class="col-lg-12 descricao-cesta ">
                         <ul> 
-                            <li  >Produto</li>
-                            <li  >Descrição</li>
-                            <li  >Quantidade</li>
-                            <li  >Valor</li>
+                            <li class="col-lg-2" >Produto</li>
+                            <li   class="col-lg-2">Descrição</li>
+                            <li   class="col-lg-2">Quantidade</li>
+                            <li   class="col-lg-1">Valor</li>
                         </ul>
                     </div>
                 </div>
-                <div class="row produto-cesta">
+                <div class="  col-lg-12 produto-cesta">
 
                     <div class="col-lg-3">
                       <img src="../../assets/images/caixa-remedio.jpg">
                     </div>
 
-                    <div class="col-lg-3">
-                        <ul>
+                    <div class="col-lg-4">
+                        <ul >
                             <p>AAS PROTECT 100MG
                                  Sanofi
                                 30 Comprimidos
@@ -40,25 +40,24 @@
                     </div>
                     <div class="col-lg-3">
                         <div data-app="product.quantity" id="quantidade">
-                            <input type="button" class="btn btn-light " id="plus" value=' - ' onclick="process(-1)" />
-                            <input id="quant" name="quant" class="text qt-cesta" size="1" type="text" value="1" maxlength="5" />
-                            <input type="button" class="btn btn-light " id="minus" value='+' onclick="process(1)">
+                            <input type="button" class="btn btn-light " id="plus" value=' - ' (click)="subtrair()" />
+                            <input id="quant" name="quant" class="text qt-cesta" size="1" type="text"  [(ngModel)]="quant" maxlength="5" [disabled]="true" />
+                            <input type="button" class="btn btn-light " id="minus" value='+' (click)="somar()">
                         </div>
                     </div>
                     <div class=" col-lg-2">
-                        <span class="card-price-cesta">
-                            <span>R$</span>
-                            13,29
+                        <span  >
+                            R$ 13,29
                         </span>
                     </div>
-                    <div class=" col-lg-1">
+                    <div >
                         <a href="#" class="lixeira-cesta">Excluir</a>
                     </div>
                 </div>
             </div>
 
-        <div >
-            <input type="button" class="form-control btn-primary btnc cc" value="Continuar Comprando"> 
+        <div class="row col-lg-12">
+            <button type="submit" class="btn btnContinuar btn-success">Continuar Comprando</button> 
         </div> 
 
  
@@ -75,7 +74,7 @@
                 </li>
                 <li class=" col-lg-12 ">
                     
-                        Produtos: 1
+                        Produtos: {{quant}}
               
                 </li>
                 <li class=" col-lg-12  ">
@@ -98,7 +97,7 @@
        
 
             <form action="" class="col-lg-12">
-                <button type="submit" class="btn btnc btn-primary">FINALIZAR COMPRA</button>      
+                <button type="submit" class="btn btnFinalizar btn-success">Finalizar Compra</button>      
             </form>
     
         </div> 

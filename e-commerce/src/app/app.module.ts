@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import{FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { HeaderMainComponent } from './header-main/header-main.component';
@@ -24,6 +25,10 @@ import { RegrasFreteComponent } from './atendimento/regras-frete/regras-frete.co
 import { TrocaDevolucaoComponent } from './atendimento/troca-devolucao/troca-devolucao.component';
 import { FormaPagamentoComponent } from './atendimento/forma-pagamento/forma-pagamento.component';
 import { AcompanhePedidoComponent } from './atendimento/acompanhe-pedido/acompanhe-pedido.component';
+import { MinhaContaComponent } from './atendimento/minha-conta/minha-conta.component';
+import { ContatoComponent } from './atendimento/contato/contato.component';
+import { ComprasComponent } from './atendimento/compras/compras.component';
+import { ServicosComponent } from './atendimento/servicos/servicos.component';
 
 @NgModule({
   declarations: [
@@ -48,11 +53,16 @@ import { AcompanhePedidoComponent } from './atendimento/acompanhe-pedido/acompan
     TrocaDevolucaoComponent,
     FormaPagamentoComponent,
     AcompanhePedidoComponent,
+    MinhaContaComponent,
+    ContatoComponent,
+    ComprasComponent,
+    ServicosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
