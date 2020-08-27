@@ -25,18 +25,6 @@ export class CestaComponent implements OnInit {
   }
 
 
-
-
-//    process(quant) {
-//     var value = parseInt(document.getElementById("quant"));
-//     value += quant;
-//     if (value < 1) {
-//         document.getElementById("quant").value = 1;
-//     } else {
-//         document.getElementById("quant").value = value;
-//     }
-// }
-
  
   ngOnInit(): void {
   }
