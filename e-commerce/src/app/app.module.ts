@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import{FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { HeaderMainComponent } from './header-main/header-main.component';
@@ -15,6 +18,17 @@ import { MenuCategoriaComponent } from './menu-categoria/menu-categoria.componen
 import { DestaquesCaroselComponent } from './destaques-carosel/destaques-carosel.component';
 import { ProdutoDetalhesComponent } from './produto-detalhes/produto-detalhes.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import {HistComprasComponent} from './hist-compras/hist-compras.component';
+import { CestaComponent } from './cesta/cesta.component';
+import { AtendimentoComponent } from './atendimento/atendimento.component';
+import { RegrasFreteComponent } from './atendimento/regras-frete/regras-frete.component';
+import { TrocaDevolucaoComponent } from './atendimento/troca-devolucao/troca-devolucao.component';
+import { FormaPagamentoComponent } from './atendimento/forma-pagamento/forma-pagamento.component';
+import { AcompanhePedidoComponent } from './atendimento/acompanhe-pedido/acompanhe-pedido.component';
+import { MinhaContaComponent } from './atendimento/minha-conta/minha-conta.component';
+import { ContatoComponent } from './atendimento/contato/contato.component';
+import { ComprasComponent } from './atendimento/compras/compras.component';
+import { ServicosComponent } from './atendimento/servicos/servicos.component';
 
 @NgModule({
   declarations: [
@@ -25,16 +39,30 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     BodyidentificacaoComponent,
     BodyloginComponent,
     BodyentregaComponent,
-    BodyminhacontaComponent
+    BodyminhacontaComponent,
     CaroselComponent,
     FooterMainComponent,
     MenuCategoriaComponent,
     DestaquesCaroselComponent,
     ProdutoDetalhesComponent,
-    CadastroComponent
+    CadastroComponent,
+    HistComprasComponent,
+    CestaComponent,
+    AtendimentoComponent,
+    RegrasFreteComponent,
+    TrocaDevolucaoComponent,
+    FormaPagamentoComponent,
+    AcompanhePedidoComponent,
+    MinhaContaComponent,
+    ContatoComponent,
+    ComprasComponent,
+    ServicosComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

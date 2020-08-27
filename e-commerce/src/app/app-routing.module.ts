@@ -5,11 +5,33 @@ import { HeaderentregaComponent } from './headerentrega/headerentrega.component'
 import { FooterentregaComponent } from './footerentrega/footerentrega.component';
 import { BodyidentificacaoComponent } from './bodyidentificacao/bodyidentificacao.component';
 import { BodyloginComponent } from './bodylogin/bodylogin.component';
+import { HistComprasComponent } from './hist-compras/hist-compras.component';
+import {AtendimentoComponent} from './atendimento/atendimento.component';
+import {AcompanhePedidoComponent} from './atendimento/acompanhe-pedido/acompanhe-pedido.component';
+import {ComprasComponent} from './atendimento/compras/compras.component';
+import {ContatoComponent} from './atendimento/contato/contato.component';
+import {FormaPagamentoComponent} from './atendimento/forma-pagamento/forma-pagamento.component';
+import {MinhaContaComponent} from './atendimento/minha-conta/minha-conta.component';
+import {RegrasFreteComponent} from './atendimento/regras-frete/regras-frete.component';
+import {ServicosComponent} from './atendimento/servicos/servicos.component';
+import {TrocaDevolucaoComponent} from './atendimento/troca-devolucao/troca-devolucao.component';
+import {CestaComponent} from './cesta/cesta.component';
+import {CadastroComponent} from './cadastro/cadastro.component';
+import {BodyminhacontaComponent} from './bodyminhaconta/bodyminhaconta.component';
+import {BodyentregaComponent} from './bodyentrega/bodyentrega.component';
+import {CaracteristicasDescricaoComponent} from './caracteristicas-descricao/caracteristicas-descricao.component';
+ import {CaroselComponent} from './carosel/carosel.component';
+ import {DestaquesCaroselComponent} from './destaques-carosel/destaques-carosel.component';
 
 
 export const routes: Routes = [
     {
-        path: 'entrega',
+        path: '',
+        component: CaroselComponent
+    },
+ 
+    {
+        path: 'headerEntrega',
         component: HeaderentregaComponent
     },
     {
@@ -19,27 +41,71 @@ export const routes: Routes = [
     {
         path: 'login',
         component: BodyloginComponent
-    }
-];
-
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule} from '@angular/router';
-import { HistComprasComponent } from './hist-compras/hist-compras.component';
-
-export const rotas: Routes = [
-   
+    },
+    
     {
         path: 'histCompras',
         component: HistComprasComponent
+    },
+    {
+        path: 'cesta',
+        component: CestaComponent
+    },
+    {
+        path: 'cadastro',
+        component: CadastroComponent
+    },
+    {
+        path: 'minhaConta',
+        component: BodyminhacontaComponent
+    },
+    {
+        path: 'entrega',
+        component: BodyentregaComponent
+    },
+    
+    {
+        path: 'atendimento',
+        component: AtendimentoComponent
+    },
+   
+    {
+        path: 'atendimento/acompanhePedido',
+        component: AcompanhePedidoComponent
+    },
+    {
+        path: 'atendimento/compras',
+        component: ComprasComponent
+    },
+    {
+        path: 'atendimento/contato',
+        component: ContatoComponent
+    },
+    {
+        path: 'atendimento/formaPagamento',
+        component: FormaPagamentoComponent
+    },
+    {
+        path: 'atendimento/conta',
+        component: MinhaContaComponent
+    },
+    {
+        path: 'atendimento/regrasFrete',
+        component: RegrasFreteComponent
+    },
+    {
+        path: 'atendimento/servicos',
+        component: ServicosComponent
+    },
+    {
+        path: 'atendimento/trocaDevolucao',
+        component: TrocaDevolucaoComponent
     }
-
 ];
-
+ 
+ 
 @NgModule({
-    imports: [RouterModule.forRoot(rotas)],
+    imports: [RouterModule.forRoot(routes)],
     exports:[RouterModule]
 })
 
