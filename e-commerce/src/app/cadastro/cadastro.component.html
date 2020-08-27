@@ -1,26 +1,21 @@
 <br>
 <br>
 <div class="row tituloCad">
-        <h2 style="color: #006172 !important">Novo Cadastro</h2>
-    <div class="teste">
-        <div class="input-group mt-2">
+        <h2 >Novo Cadastro</h2>
+<!--     <div class="teste">
+        <div class="input-group">
             <button id="posicionar" style="background-color: #006172 !important" type="button"
                 class="btn btn-info btn-block mt-2">Já Tenho Cadastro!</button>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <div class="row formCadastro ">
     <div class="row col-lg-6 cadastro align-self-center area-form ">
         <div class="input-group">
-            <div class="col-md-6">Nome*
-                <div><input type="text" id=nome class="form-control bg-light btn-outline-secondary" placeholder="Nome"
+            <div class="col-12">Nome Completo*
+                <div><input type="text" id=nome class="form-control bg-light btn-outline-secondary" placeholder=""
                         required></div>
-            </div>
-            <div class="col-md-6">Sobrenome*
-                <div>
-                    <input type="text" id=sobrenome class="form-control bg-light btn-outline-secondary"
-                        placeholder="Sobrenome"></div>
             </div>
         </div>
 
@@ -34,7 +29,7 @@
                 <div>
                     <div>Gênero
                         <div class="dropdown">
-                            <button style="background-color: #006172 !important"
+                            <button style="background-color: #016f33 !important"
                                 class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Escolha uma
                                 Opção</button>
@@ -49,12 +44,13 @@
             </div>
         </div>
 
+
         <div class="col-md-12 input-group">
-            <div class="col-md-6">Telefone 1*
+            <div id="tel">Telefone 1*
                 <div><input type="text" class="form-control bg-light btn-outline-secondary"
                         onkeypress="$(this).mask('(00) 0000-00009')"></div>
             </div>
-            <div class="col-md-6">Telefone 2
+            <div id="tel">Telefone 2
                 <div><input type="text" class="form-control bg-light btn-outline-secondary"
                         onkeypress="$(this).mask('(00) 0000-00009')"></div>
             </div>
@@ -67,11 +63,11 @@
                 </div>
             </div>
         </div>
-
     </div>
 
-    <div class="row col-lg-6 align-self-center area-form ">
-        <div class="input-group mt-2">
+
+    <div class="row col-lg-6">
+        <div class="input-group">
             <div class="form-group col-12">E-mail
                 <input type="text" class="form-control bg-light btn-outline-secondary" placeholder="seu.email@mail.com">
             </div>
@@ -97,8 +93,8 @@
         </div>
 
         <div>
-            <div id="posicionar1" class="input-group mt-2">
-                <button id="posicionar" style="background-color: #006172 !important" type="button"
+            <div id="posicionar1" class=" float-right">
+                <button id="posicionar" style="background-color: #016f33 !important" type="button"
                 class="btn btn-info btn-block mt-2">Cadastrar</button>
             </div>
         </div>

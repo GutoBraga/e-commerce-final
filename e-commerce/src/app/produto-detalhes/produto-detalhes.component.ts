@@ -16,7 +16,7 @@ export class ProdutoDetalhesComponent implements OnInit {
   produto: ProdutoDetalhes = {
 
     nome: "HIDRATANTE FACIAL VICHY MINÉRAL 89",
-    img:"https://unicpharma.vteximg.com.br/arquivos/ids/160897-1000-1000/Vichy-Mineral-89-Gel-Antiidade-Facial-50mL.jpg?v=636759882097600000",
+    img:"https://i.imgur.com/uYGW8dc.jpg",
     marca: "Vichy",
     tamanho: "50ml",
     descricao: "Hidratante Vichy Minéral 89 é um fortalecedor facial composto com Ácido Hialurônico e 89% de Água Vulcânica Mineralizante, comprovadamente capaz de fortalecer as defesas naturais da pele.",

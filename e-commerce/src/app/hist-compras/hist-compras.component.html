@@ -13,48 +13,45 @@
 
 <div class="hist"> 
 
-    <div  class="row historico-tabela" *ngFor="let item of pedidos "> 
-        <div  class="historico-fundo col-lg-9" >
+    <div *ngFor="let quant of qtd" class="row historico-tabela" >
+        <div  class="historico-fundo col-lg-9">
 
-            <div class="row historico"  >
-                <div class="col-lg-12 ">
-                    <ul >
-                       
-                            <p> Data {{item.data}}</p>
-                       
+            <div class="row historico">
+                <div class="col-lg-12">
+                    <ul>
+                        <div class="col-3 item">
+                            <p> {{ quant.data  }} </p>
+                        </div>
+                        <div class="col-3 item">
                             <p> Produto </p>
-                       
-                      
-                            <p> Quantidade  </p>
-                        
-                      
+                        </div>
+                        <div class="col-3 item">
+                            <p> Quantidade </p>
+                        </div>
+                        <div class="col-3 item">
                             <p> Valor Unitário </p>
+                        </div>
                     </ul>
-                </div>     
-                  
-               
-          
-                <div class="col-lg-12 item" *ngFor="let it of item.itens" >
-                
-                    <img src="../../assets/images/caixa-remedio.jpg">
-              
-                    <p>
-                        {{ it.dsProduto }}</p>
-                
-
-                
-                    <p>{{ it.quantidade }}</p>
-                  
-
-           
-                    <p>{{ it.valor  }}</p>
-         
-              
                 </div>
-
             </div>
 
-       
+            <div *ngFor="let pedido of pedidos" class="row">
+                <div class="col-3 item">
+                    <img [src]="pedido.img">
+    
+                </div>
+                <div class="col-3 item">
+                    <p>{{ pedido.nome }}</p>
+                </div>
+                <div class="col-3 item">
+                    <p>{{ pedido.quantidade }}</p>
+                </div>
+                <div class="col-3 item">
+                    <p>{{ pedido.valor }}</p>
+                </div>
+            
+            </div>
+
             
 
         </div>
@@ -67,10 +64,7 @@
 
 
            
-    </div>  
-
-
-
+    </div>
 
 </div>
 
