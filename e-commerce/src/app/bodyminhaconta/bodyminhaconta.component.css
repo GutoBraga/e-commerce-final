@@ -19,10 +19,6 @@
   height: auto;
 }
 
-.botao-continuar{
-  margin-left: 20px;
-}
-
 .logosSuperiores {
   margin-right: 15px;
   margin-top: 5px;
@@ -36,4 +32,21 @@
 
 .thumbnail{
   margin-left: 50px;
+}
+/* .salva-endereco{
+  margin-top: 30px;
+  margin-left: 900px;
+} */
+.adccartao{
+  margin-left: 100px;
+}
+.alteracadastro
+{
+  margin-right: 160px;
+}
+.salvacartao{
+  margin-left: 10px;
+}
+.selectendereco{
+  margin-left: 20px;
 }
