@@ -50,7 +50,7 @@
             <br>
 
             <div id="prodCentral">
-                <p id="valorProdIndividual">R$ {{produto.valor}}</p>
+                <p id="valorProdIndividual">R$ {{produto.valor | currency: 'BRL': true}}</p>
                 <br>
                 <button id="btnBuyProd" class="col-lg-6 col-sm-3 btn btn-primary btn-lg" type="submit">Comprar</button>
             </div>

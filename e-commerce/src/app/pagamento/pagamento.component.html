@@ -1,0 +1,175 @@
+<div class="col-lg-12 container">
+    <div class="row">
+        <div class="col-lg-6 box">
+            <br>
+            <h3><span>Formas de Pagamento</span></h3>
+            <br>
+            <div class="caixa">
+                <div class="row pagamento-cartao">
+                    <input type="radio" name="forma-de-pagamento" id="opcao-pagamento" class="credito col-1">
+                    <span>Crédito</span>
+                    <input type="radio" name="forma-de-pagamento" id="opcao-pagamento" class="credito col-1">
+                    <span>Débito</span>
+                 
+<!--                     <div class="row bandeira ">
+                        <input type="radioOpcao" name="imagem" id="d1" />
+                        <label for="d1"><img src="../../assets/images/Ícones/Pagamentos/Bradesco.png" alt=""></label>
+    
+                        <input type="radioOpcao" name="imagem" id="d2" />
+                        <label for="d2"><img src="../../assets/images/Ícones/Pagamentos/Itaú.png" alt=""></label>
+                    </div> -->
+                </div>
+                <br>
+
+                <div class="input-group">
+                    <div class="col-12">
+                        <span>Numero do Cartão</span>
+                        <div><input type="text" id=nome class="form-control bg-light btn-outline-secondary"
+                                placeholder="" required></div>
+                    </div>
+                </div>
+                <br>
+
+                <!-- <div class="">
+                    <div class="row bandeira ">
+                        <input type="radioOpcao" name="imagem" id="c1" />
+                        <label for="c1"><img src="../../assets/images/Ícones/Pagamentos/Visa.png" alt=""></label>
+
+                        <input type="radioOpcao" name="imagem" id="c2" />
+                        <label for="c2"><img src="../../assets/images/Ícones/Pagamentos/Mastercard.png" alt=""></label>
+
+                        <input type="radioOpcao" name="imagem" id="c3" />
+                        <label for="c3"><img src="../../assets/images/Ícones/Pagamentos/Amex.png" alt=""></label>
+
+                        <input type="radioOpcao" name="imagem" id="c4" />
+                        <label for="c4"><img src="../../assets/images/Ícones/Pagamentos/DI.png" alt=""></label>
+
+                        <input type="radioOpcao" name="imagem" id="c5" />
+                        <label for="c5"><img src="../../assets/images/Ícones/Pagamentos/Elo.png" alt=""></label>
+
+                        <input type="radioOpcao" name="imagem" id="c6" />
+                        <label for="c6"><img src="../../assets/images/Ícones/Pagamentos/Hypercard.png" alt=""></label>
+                    </div>
+                </div> -->
+                <br>
+
+
+                <div class="input-group">
+                    <div class="col-12">
+                        <span>Nome do Títular</span>
+                        <div><input type="text" id=nome class="form-control bg-light btn-outline-secondary"
+                                placeholder="" required></div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="col-md-12 input-group vencimento">
+                    <div id="mes">
+                        <span>Mês</span>
+                        <div><input type="text" class="form-control bg-light btn-outline-secondary"></div>
+                    </div>
+                    <div id="ano">
+                        <span>Ano</span>
+                        <div><input type="text" class="form-control bg-light btn-outline-secondary"></div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="input-group">
+                    <div class="col-4">
+                        <span>CVC</span>
+                        <div><input type="text" id=nome class="form-control bg-light btn-outline-secondary"
+                                placeholder="" required></div>
+                    </div>
+                </div>
+
+                <br>
+                <div class=" cadcheck input-group mb-3 col-12">
+                    <div class="input-group-prepend">
+                        <div class="checkCad input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                        <span> Salvar dados do cartão</span>
+                    </div>
+                </div>
+            </div>
+<!-- 
+            <div class="caixa">
+                <div class=" pagamento-debito">
+                    <input type="radio" name="forma-de-pagamento" id="opcao-pagamento" class="credito col-1">
+                    <span>Débito</span>
+                </div>
+                <br>
+
+                <div class="row bandeira ">
+                    <input type="radioOpcao" name="imagem" id="d1" />
+                    <label for="d1"><img src="../../assets/images/Ícones/Pagamentos/Bradesco.png" alt=""></label>
+
+                    <input type="radioOpcao" name="imagem" id="d2" />
+                    <label for="d2"><img src="../../assets/images/Ícones/Pagamentos/Itaú.png" alt=""></label>
+                </div>
+
+            </div> -->
+
+            <div class="caixa">
+                <div class=" pagamento-boleto">
+                    <input type="radio" name="forma-de-pagamento" id="opcao-pagamento" class="credito col-1">
+                    <span>Boleto</span>
+                </div>
+                <br>
+
+                <div class="row debito">
+                    <input type="radioOpcao" name="imagem" id="d1" />
+                    <label for="d1"><img src="../../assets/images/Ícones/Pagamentos/Código de Barras.jpg"
+                            alt=""></label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 box">
+            <br>
+            <h3><span id="resumo">Resumo do Pedido</span></h3>
+            <br>
+            <br>
+            <br>
+
+            <div class="row detalhes ">
+                <div class="linha">
+                    <span>Produto</span>
+                </div>
+
+                <div class="linha">
+                    <span>Quantidade</span>
+                </div>
+
+                <div class="linha">
+                    <span>Valor</span>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="subtotal">
+                <h4>Subtotal</h4>
+            </div>
+
+            <div class="frete">
+                <h4>Frete</h4>
+            </div>
+            <br>
+
+            <div class="total">
+                <h4>Total</h4>
+                <hr>
+            </div>
+
+            <div class="finalizar">
+                <button type="submit" class="btn btnf btn-primary">FINALIZAR COMPRA</button>
+            </div>
+        </div>
+    </div>
+</div>
