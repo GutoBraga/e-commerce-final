@@ -15,18 +15,23 @@ import {MinhaContaComponent} from './atendimento/minha-conta/minha-conta.compone
 import {RegrasFreteComponent} from './atendimento/regras-frete/regras-frete.component';
 import {ServicosComponent} from './atendimento/servicos/servicos.component';
 import {TrocaDevolucaoComponent} from './atendimento/troca-devolucao/troca-devolucao.component';
+import {CestaComponent} from './cesta/cesta.component';
+import {CadastroComponent} from './cadastro/cadastro.component';
+import {BodyminhacontaComponent} from './bodyminhaconta/bodyminhaconta.component';
+import {BodyentregaComponent} from './bodyentrega/bodyentrega.component';
+import {CaracteristicasDescricaoComponent} from './caracteristicas-descricao/caracteristicas-descricao.component';
+ import {CaroselComponent} from './carosel/carosel.component';
+ import {DestaquesCaroselComponent} from './destaques-carosel/destaques-carosel.component';
 
 
 export const routes: Routes = [
     {
         path: '',
-        component: AtendimentoComponent
+        component: CaroselComponent
     },
-
-
-    
+ 
     {
-        path: 'entrega',
+        path: 'headerEntrega',
         component: HeaderentregaComponent
     },
     {
@@ -36,6 +41,32 @@ export const routes: Routes = [
     {
         path: 'login',
         component: BodyloginComponent
+    },
+    
+    {
+        path: 'histCompras',
+        component: HistComprasComponent
+    },
+    {
+        path: 'cesta',
+        component: CestaComponent
+    },
+    {
+        path: 'cadastro',
+        component: CadastroComponent
+    },
+    {
+        path: 'minhaConta',
+        component: BodyminhacontaComponent
+    },
+    {
+        path: 'entrega',
+        component: BodyentregaComponent
+    },
+    
+    {
+        path: 'atendimento',
+        component: AtendimentoComponent
     },
    
     {
