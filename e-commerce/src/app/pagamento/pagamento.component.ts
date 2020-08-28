@@ -12,4 +12,9 @@ export class PagamentoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  clicked():void {
+    alert('Compra realizada com Sucesso! O numero de seu pedido é 19');
+  }
+ 
 }

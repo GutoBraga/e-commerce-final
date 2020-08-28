@@ -51,8 +51,6 @@
                         <label for="c6"><img src="../../assets/images/Ícones/Pagamentos/Hypercard.png" alt=""></label>
                     </div>
                 </div> -->
-                <br>
-
 
                 <div class="input-group">
                     <div class="col-12">
@@ -137,14 +135,20 @@
             <div class="row detalhes ">
                 <div class="linha">
                     <span>Produto</span>
+                    <p>Engov</p>
+                    <p>Epocler</p>
                 </div>
 
                 <div class="linha">
                     <span>Quantidade</span>
+                    <p>1</p>
+                    <p>2</p>
                 </div>
 
                 <div class="linha">
                     <span>Valor</span>
+                    <p>R$5,60</p>
+                    <p>R$3,40</p>
                 </div>
             </div>
             <br>
@@ -155,20 +159,23 @@
 
             <div class="subtotal">
                 <h4>Subtotal</h4>
+                <span class="float-right">12,40</span>
             </div>
-
+            <br>
             <div class="frete">
                 <h4>Frete</h4>
+                <span class="float-right">GRATIS</span>
             </div>
             <br>
 
             <div class="total">
                 <h4>Total</h4>
+                <span class="float-right">12,40</span>
                 <hr>
             </div>
-
+            <br>
             <div class="finalizar">
-                <button type="submit" class="btn btnf btn-primary">FINALIZAR COMPRA</button>
+                <button (click)="clicked()" type="submit" class="btn btnf btn-primary" >FINALIZAR COMPRA</button>
             </div>
         </div>
     </div>
