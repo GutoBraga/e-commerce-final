@@ -1,4 +1,4 @@
-<div class="row py-5" >
+<!-- <div class="row py-5" >
   <div class="col-md-4 justify-content-center">
       <div class="thumbnail">
           <img class="float-left logosSuperiores" src="../../assets/images/Ícones/usuario.png" alt="Responsive image">
@@ -21,89 +21,212 @@
       <div class="h5 text-menu"><b>Pagamento</b></div>
       <div class="h1 small text-menu">Escolha a forma de pagamento</div>
   </div>
-</div>
+</div> -->
+<h2 class="text-center py-3">Dados Cadastrais</h2>
 <div class="row">
+
   <!--Coluna 1 dos dados de cadastro-->
   <div class="col-sm-6">
-      <form>
-          <div class="formLogin">
-              <div class="form-group col-9">
-                  <label for="cep">Nome*</label>
-                  <input type="text" class="form-control" id="cep" placeholder="Digite seu nome" required>
-                  <small id="emailHelp" class="form-text text-muted cep"></small>
-              </div>
-              <div class="form-group col-9">
-                  <label for="numero">Sobrenome*</label>
-                  <input type="text" class="form-control" id="numero" placeholder="Digite seu sobrenome" required>
-                  <small id="#" class="form-text text-muted num-endereco"></small>
-              </div>
-              <div class="form-group form-check">
-              </div>
-          </div>
-      </form>
+    <form>
+      <div class="formLogin">
+        <div class="form-group col-9">
+          <label for="cep">Nome completo*</label>
+          <input type="text" class="form-control" id="cep" placeholder="Insira aqui seu nome completo" required>
+          <small id="emailHelp" class="form-text text-muted cep"></small>
+        </div>
+        <div class="form-group col-9">
+          <label for="numero">Telefone 1*</label>
+          <!-- <input type="text" [textMask]="{mask: maskTel1}" class="form-control" id="numero" placeholder="(DDD) 00000-0000" required> -->
+            <input type="text"  class="form-control" id="numero" placeholder="(DDD) 00000-0000" required>
+          <small id="#" class="form-text text-muted num-endereco"></small>
+        </div>
+        <div class="form-group form-check">
+        </div>
+      </div>
+    </form>
   </div>
   <!--Coluna 2 dos dados de cadastro-->
   <div class="col-sm-6">
-      <form>
-          <div class="formLogin">
-              <div class="form-group col-9">
-                  <label for="telefone">Telefone para Contato*</label>
-                  <input type="text" class="form-control" id="telefone" placeholder="(DDD) 00000-0000" required>
-                  <small id="#" class="form-text text-muted"></small>
-              </div>
-              <div class="form-group col-9">
-                  <label for="complemento">Confirmar Telefone</label>
-                  <input type="text" class="form-control" id="complemento" placeholder="(DDD) 00000-0000">
-                  <small id="#" class="form-text text-muted complemento"></small>
-              </div>
-              <div class="form-group form-check">
-              </div>
+    <form>
+      <div class="formLogin">
+        <div class="form-group col-9">
+          <label for="telefone">Telefone 2</label>
+          <input type="text"   class="form-control" id="telefone" placeholder="(DDD) 00000-0000" required>
+          <!-- <input type="text" [textMask]="{mask: maskTel}" class="form-control" id="telefone" placeholder="(DDD) 00000-0000" required> -->
+          <small id="#" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group col-9">
+          <label for="complemento">CEP*</label>
+          <!-- <input type="text" [textMask]="{mask: maskCep}" class="form-control" id="cep" placeholder="Digite o CEP"> -->
+          <input type="text"  class="form-control" id="cep" placeholder="Digite o CEP">
 
-          </div>
-      </form>
+          <small id="#" class="form-text text-muted complemento"></small>
+        </div>
+        <div class="form-group form-check">
+        </div>
+
+      </div>
+    </form>
   </div>
 </div>
-     <!--Coluna 3 dos dados de cadastro-->
-     <div class="row">
-      <div class="col-sm-6">
-          <form>
-              <div class="formLogin">
-                  <div class="form-group col-9">
-                      <label for="cep">Cidade*</label>
-                      <input type="text" class="form-control" id="cidade" placeholder="Ex: São Paulo" required>
-                      <small id="Cidade" class="form-text text-muted"></small>
-                  </div>
-                  <div class="form-group col-9">
-                      <label for="estado">Estado*</label>
-                      <input type="text" class="form-control" id="estado" placeholder="Ex: SP" required>
-                      <small id="#" class="form-text text-muted"></small>
-                  </div>
-                  <div class="form-group form-check">
-                  </div>
-              </div>
-          </form>
+
+<!--Coluna 3 dos dados de cadastro-->
+<div class="row">
+  <div class="col-sm-6">
+    <form>
+      <div class="formLogin">
+        <div class="form-group col-9">
+          <label for="cep">Rua*</label>
+          <input type="text" class="form-control" id="" placeholder="Insira aqui seu endereço" required>
+          <small id="Cidade" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group col-9">
+          <label for="estado">Estado*</label>
+          <input type="text" class="form-control" id="estado" placeholder="Ex: SP" required>
+          <small id="#" class="form-text text-muted"></small>
+        </div>
+        <!--Botão de selecionar endereço-->
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle float-none selectendereco" style="background-color: #016f33!important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        SELECIONE O ENDEREÇO
+      </button>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Endereço 1</a>
+        <a class="dropdown-item" href="#">Endereço 2</a>
       </div>
-      <!--Coluna 4 dos dados de cadastro-->
-      <div class="col-sm-6">
-          <form>
-              <div class="formLogin">
-                  <div class="form-group col-9">
-                      <label for="bairro">Bairro*</label>
-                      <input type="text" class="form-control" id="bairro" placeholder="Ex: Centro" required>
-                      <small id="#" class="form-text text-muted"></small>
-                  </div>
-                  <div class="form-group col-9">
-                      <label for="">Digite sua senha*</label>
-                      <input type="text" class="form-control" id="" placeholder="">
-                      <small id="#" class="form-text text-muted"></small>
-                  </div>
-                  <div class="form-group form-check">
-                  </div>
-                  <button style="background-color: #016f33!important" type="submit"
-                      class="btn btn-primary float-right salva-endereco">SALVAR ALTERAÇÕES</button>
-              </div>
-          </form>
+    </div>
       </div>
+    </form>
   </div>
-  <br>
-      <br>
+  <!--Cidade e Bairro-->
+  <div class="col-sm-6">
+    <form>
+      <div class="formLogin">
+        <div class="form-group col-9">
+          <label for="cep">Bairro*</label>
+          <input type="text" class="form-control" id="cidade" placeholder="Centro" required>
+          <small id="Cidade" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group col-9">
+          <label for="estado">Cidade*</label>
+          <input type="text" class="form-control" id="estado" placeholder="Ex: São Paulo" required>
+          <small id="#" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group form-check">
+        </div>
+      </div>
+    </form>
+    <!--Botão de alterar dados endereço-->
+    <div class="btn-group-toggle float-right" data-toggle="buttons">
+      <button style="background-color: #016f33!important" type="submit"
+          class="btn btn-primary float-right alteracadastro">EDITAR</button>
+    </div>
+
+
+
+    <!--Botão de adicionar novo endereço-->
+    <!-- <div class="btn-group-toggle float-right" data-toggle="buttons">
+      <button style="background-color: #016f33!important" type="submit"
+          class="btn btn-primary float-left novoendereco">NOVO ENDEREÇO</button>
+    </div> -->
+  </div>
+  <!--Dados de e-mail-->
+  <div class="col-sm-6">
+    <form>
+      <div class="formLogin">
+        <div class="form-group col-9">
+          <label for="cep">Novo e-mail*</label>
+          <input type="text" class="form-control" id="cidade" placeholder="Digite aqui o novo e-mail" required>
+          <small id="Cidade" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group col-9">
+          <label for="estado">Confirmar o novo e-mail*</label>
+          <input type="text" class="form-control" id="estado" placeholder="Confirme o novo e-mail" required>
+          <small id="#" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group form-check">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-sm-6">
+    <form>
+      <div class="formLogin">
+        <div class="form-group col-9">
+          <label for="cep">Novo senha*</label>
+          <input type="text" class="form-control" id="cidade" placeholder="Digite aqui a nova senha" required>
+          <small id="Cidade" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group col-9">
+          <label for="estado">Confirmar a nova senha*</label>
+          <input type="text" class="form-control" id="estado" placeholder="Confirme a nova senha" required>
+          <small id="#" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group form-check">
+        </div>
+        <!--Botão de alterar dados cadastrais-->
+    <div class="btn-group-toggle float-right" data-toggle="buttons">
+      <button style="background-color: #016f33!important" type="submit"
+          class="btn btn-primary float-right alteracadastro">EDITAR</button>
+
+    </div>
+      </div>
+    </form>
+  </div>
+
+   <!--Dados do cartão de crédito-->
+   <div class="col-sm-9 py-3">
+    <h5 class="adccartao">Adicionar Cartão de Crédito</h5>
+    <form>
+      <div class="formLogin">
+        <div class="form-group col-9">
+          <label for="bairro">Nome do Titular</label>
+          <input type="text" class="form-control" id="bairro" placeholder="Insira o nome do titular igual ao descrito no cartão">
+          <small id="#" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group col-9">
+          <label for="">Número do Cartão</label>
+          <input type="text" class="form-control" id="" placeholder="Insira os números do cartão">
+          <small id="#" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group form-check">
+        </div>
+
+         <!-- <div class="col-sm-9 py-3">
+          <p>Data de Vencimento</p>
+          <form>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Mês">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Ano">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-3">
+          <p>Código de Segurança</p>
+          <form>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="CVC">
+              </div>
+            </div>
+          </form>
+        </div> -->
+
+     <div class="btn-group-toggle" data-toggle="buttons">
+      <button style="background-color: #016f33!important" type="submit"
+          class="btn btn-primary float-none salvacartao">SALVAR DADOS DO CARTÃO</button>
+    </div>
+        <div class="py-5">
+        <button style="background-color: #016f33!important" type="submit"
+          class="btn btn-primary float-right salva-endereco" routerLink="">SALVAR E CONTINUAR</button>
+        </div>
+</div>
+<br>
+<br>

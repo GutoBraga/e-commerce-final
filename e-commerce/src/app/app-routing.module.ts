@@ -22,12 +22,15 @@ import {BodyentregaComponent} from './bodyentrega/bodyentrega.component';
 import {CaracteristicasDescricaoComponent} from './caracteristicas-descricao/caracteristicas-descricao.component';
  import {CaroselComponent} from './carosel/carosel.component';
  import {DestaquesCaroselComponent} from './destaques-carosel/destaques-carosel.component';
+ import {PagamentoComponent} from './pagamento/pagamento.component';
+ import {CategoriasComponent} from './categorias/categorias.component';
+ import {ProdutoDetalhesComponent} from './produto-detalhes/produto-detalhes.component';
 
 
 export const routes: Routes = [
     {
         path: '',
-        component: CaroselComponent
+        component: DestaquesCaroselComponent
     },
  
     {
@@ -35,7 +38,11 @@ export const routes: Routes = [
         component: HeaderentregaComponent
     },
     {
-        path: 'identificacao',
+        path: 'categorias',
+        component: CategoriasComponent
+    },
+    {
+        path: 'confirCompra',
         component: BodyidentificacaoComponent
     },
     {
@@ -62,6 +69,10 @@ export const routes: Routes = [
     {
         path: 'entrega',
         component: BodyentregaComponent
+    },
+    {
+        path: 'pagamento',
+        component: PagamentoComponent
     },
     
     {

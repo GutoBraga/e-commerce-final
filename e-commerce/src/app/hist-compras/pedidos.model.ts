@@ -1,11 +1,12 @@
 export interface Pedido {
 
-       idNf: number;
-       data: string;
-       itens: [];
+    nome: string;
+    img: string;
+    quantidade: string;
+    valor: string;
 }
- 
 
- 
- 
+export interface Quantidade {
 
+    data: string;
+}
