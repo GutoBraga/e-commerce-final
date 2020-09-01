@@ -1,0 +1,17 @@
+.text-menu{
+  color: var(--cinzatexto);
+}
+.logosSuperiores {
+  margin-right: 5px;
+  margin-top: 5px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.text-menu a {
+
+color: black;
+font-weight: bold;
+text-decoration: none;
+
+}
