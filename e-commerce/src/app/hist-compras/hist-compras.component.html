@@ -3,7 +3,7 @@
 <div class="row historico-titulo">
     <div class="col-lg-12">
         <h2>Histórico de compras </h2>
-
+      
     </div>  
 
 </div>
@@ -13,41 +13,41 @@
 
 <div class="hist"> 
 
-    <div *ngFor="let quant of qtd" class="row historico-tabela" >
+    <div *ngFor="let pedido of pedidos" class="row historico-tabela" >
         <div  class="historico-fundo col-lg-9">
 
             <div class="row historico">
                 <div class="col-lg-12">
                     <ul>
                         <div class="col-3 item">
-                            <p> {{ quant.data  }} </p>
+                            <p> {{ itemPedido.dtCompra | date: 'dd/MM/yyyy'  }} </p>
                         </div>
                         <div class="col-3 item">
-                            <p> Produto </p>
+                            <p> {{ itemPedido.idPedido }} </p>
                         </div>
                         <div class="col-3 item">
-                            <p> Quantidade </p>
+                            <p> {{ itemPedido.qtItensPedido }} </p>
                         </div>
                         <div class="col-3 item">
-                            <p> Valor Unitário </p>
+                            <p> {{ itemPedido.vlTotalPedido }} </p>
                         </div>
                     </ul>
                 </div>
             </div>
 
-            <div *ngFor="let pedido of pedidos" class="row">
+            <div *ngFor="let itemPedido of pedidos" class="row">
                 <div class="col-3 item">
                     <img [src]="pedido.img">
     
                 </div>
                 <div class="col-3 item">
-                    <p>{{ pedido.nome }}</p>
+                    <p>{{ itemPedido.items.cdProduto }}</p>
                 </div>
                 <div class="col-3 item">
-                    <p>{{ pedido.quantidade }}</p>
+                    <p>{{ itemPedido.items.dsProduto }}</p>
                 </div>
                 <div class="col-3 item">
-                    <p>{{ pedido.valor }}</p>
+                    <p>{{ itemPedido.items.vlPedidoItem }}</p>
                 </div>
             
             </div>
@@ -58,7 +58,7 @@
 
         <div  class="col-3 botao">
         
-            <button type="button" class="btn btn-success">Comprar novamente</button>
+            <button type="button" class="btn btn-success" routerLink="/cesta">Comprar novamente</button>
     
         </div> 
 

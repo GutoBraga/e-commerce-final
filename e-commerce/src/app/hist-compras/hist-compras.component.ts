@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from './pedidos.model';
 import { Quantidade } from './pedidos.model';
+import { PedidoService } from './shared/pedido.service';
+
 @Component({
   selector: 'app-hist-compras',
   templateUrl: './hist-compras.component.html',
@@ -8,37 +10,22 @@ import { Quantidade } from './pedidos.model';
 })
 export class HistComprasComponent implements OnInit {
 
-  constructor() { }
+  pedidos: Pedido[];
+  erro: any;
+  constructor(private PedidoService: PedidoService) { 
+
+  }
 
   ngOnInit(): void {
+    this.getPedidosPorId();
   }
 
-
-  pedidos: Pedido[] = [
-    {
-      img:   "../assets/images/caixa-remedio.jpg",
-      nome: "Medicamento genérico 500mg", 
-      valor: "R$5,99",
-      quantidade: "1"
-    },
-    {
-      img: "../assets/images/caixa-remedio.jpg", 
-      nome: "Medicamento genérico 400mg", 
-      valor: "R$2,99",
-      quantidade: "3"
+  getPedidosPorId() {
+    this.PedidoService.getPedidos().subscribe(
+      response => {
+        this.pedidos = response;
+      });
     }
-  ]
-
-  qtd: Quantidade[] =[
-  {
-    data: "14/07/2020"
-
-  },
-  {
-    data: "11/07/2020"
-
-  }
-
-]
+ 
 
 }

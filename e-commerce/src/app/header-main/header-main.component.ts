@@ -1,4 +1,6 @@
+import { CestaService } from './../cesta/shared/cesta.service';
 import { Component, OnInit } from '@angular/core';
+
  
 
 @Component({
@@ -8,11 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderMainComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private cestaService: CestaService
+    ) { }
 
   
 
   ngOnInit(): void {
+  }
+
+  calculaCesta() {
+    return this.cestaService.calculaCesta();
+  }
+  contaCesta(){
+    return this.cestaService.contaCesta();
   }
 
 }

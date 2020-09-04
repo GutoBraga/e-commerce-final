@@ -1,8 +1,13 @@
+import { StorageServiceModule } from 'ngx-webstorage-service';
+import { CategoriasComponent } from './categorias/categorias.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import{FormsModule} from '@angular/forms'
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt-BR');
 
 import { AppComponent } from './app.component';
 import { HeaderMainComponent } from './header-main/header-main.component';
@@ -29,6 +34,7 @@ import { MinhaContaComponent } from './atendimento/minha-conta/minha-conta.compo
 import { ContatoComponent } from './atendimento/contato/contato.component';
 import { ComprasComponent } from './atendimento/compras/compras.component';
 import { ServicosComponent } from './atendimento/servicos/servicos.component';
+
 
 @NgModule({
   declarations: [
@@ -57,14 +63,23 @@ import { ServicosComponent } from './atendimento/servicos/servicos.component';
     ContatoComponent,
     ComprasComponent,
     ServicosComponent,
+    CategoriasComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StorageServiceModule
   ],
-  providers: [],
+  providers: [ HttpClient,
+   {
+     provide:LOCALE_ID,
+     useValue: "pt-BR"
+   }],
+
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-categoria',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuCategoriaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  link(id: number) {
+    this.router.navigateByUrl('categorias', { skipLocationChange: true }).then(() => {
+      this.router.navigate([`categorias/${id}`]);
+    });
+  }
+  
 }

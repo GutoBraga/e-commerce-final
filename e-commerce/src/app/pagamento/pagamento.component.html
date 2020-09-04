@@ -24,7 +24,7 @@
                 <div class="input-group">
                     <div class="col-12">
                         <span>Numero do Cartão</span>
-                        <div><input type="text" id=nome class="form-control bg-light btn-outline-secondary"
+                        <div><input type="text"  id=nome class="form-control bg-light btn-outline-secondary"
                                 placeholder="" required></div>
                     </div>
                 </div>
@@ -51,11 +51,9 @@
                         <label for="c6"><img src="../../assets/images/Ícones/Pagamentos/Hypercard.png" alt=""></label>
                     </div>
                 </div> -->
-                <br>
-
 
                 <div class="input-group">
-                    <div class="col-12">
+                    <div  class="col-12">
                         <span>Nome do Títular</span>
                         <div><input type="text" id=nome class="form-control bg-light btn-outline-secondary"
                                 placeholder="" required></div>
@@ -120,8 +118,6 @@
 
                 <div class="row debito">
                     <input type="radioOpcao" name="imagem" id="d1" />
-                    <label for="d1"><img src="../../assets/images/Ícones/Pagamentos/Código de Barras.jpg"
-                            alt=""></label>
                 </div>
             </div>
         </div>
@@ -137,14 +133,12 @@
             <div class="row detalhes ">
                 <div class="linha">
                     <span>Produto</span>
-                </div>
-
-                <div class="linha">
-                    <span>Quantidade</span>
+                    <p>{{produtos[0].nomeFantasia}}</p>
                 </div>
 
                 <div class="linha">
                     <span>Valor</span>
+                    <p>R$ {{produtos[0].valorUnidade}}</p>
                 </div>
             </div>
             <br>
@@ -155,20 +149,23 @@
 
             <div class="subtotal">
                 <h4>Subtotal</h4>
+                <span class="float-right">R$ {{produtos[0].valorUnidade}}</span>
             </div>
-
+            <br>
             <div class="frete">
                 <h4>Frete</h4>
+                <span class="float-right">GRATIS</span>
             </div>
             <br>
 
             <div class="total">
                 <h4>Total</h4>
+                <span class="float-right">R$ {{produtos[0].valorUnidade}}</span>
                 <hr>
             </div>
-
+            <br>
             <div class="finalizar">
-                <button type="submit" class="btn btnf btn-primary">FINALIZAR COMPRA</button>
+                <button (click)="clicked()" type="submit" class="btn btnf btn-primary" >FINALIZAR COMPRA</button>
             </div>
         </div>
     </div>

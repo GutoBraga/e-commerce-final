@@ -128,7 +128,7 @@ ul {
     margin: 40px 10px;
     color: #016f33;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     font-style: italic;
 }
 

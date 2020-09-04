@@ -11,5 +11,6 @@ export class BodyidentificacaoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  public maskTel = ['(','0', /[1-9]/, /\d/,')', ' ', '9',/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+  public maskEmail = [/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i]
 }

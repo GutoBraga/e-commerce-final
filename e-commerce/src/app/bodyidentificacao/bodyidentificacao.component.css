@@ -7,3 +7,11 @@
   max-width: 40px;
   max-height: 40px;
 }
+
+.text-menu a {
+
+color: black;
+font-weight: bold;
+text-decoration: none;
+
+}

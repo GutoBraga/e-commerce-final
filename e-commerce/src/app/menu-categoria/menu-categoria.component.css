@@ -29,4 +29,7 @@
  .navbar{
      display: flex;
      justify-content: center;
+
  }
+
+.navbar-custom a :hover {}

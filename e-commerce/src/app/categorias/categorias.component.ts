@@ -1,6 +1,8 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Produto } from './categorias.model'
-import { Categoria } from './categorias.model'
+import { ProdutoService } from './shared/produto.service';
+import { ResponseProdutos } from './shared/produto.model';
+
 
 @Component({
   selector: 'app-categorias',
@@ -9,35 +11,34 @@ import { Categoria } from './categorias.model'
 })
 export class CategoriasComponent implements OnInit {
 
-  constructor() { }
+  id: string;
+
+  responseProdutos: ResponseProdutos[];
+
+  constructor(
+    private produtoService: ProdutoService,
+    private route: ActivatedRoute,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
+    this.listarProdutosPorID();
+  }
+  listarProdutosPorID() {
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.produtoService.getProdutosPorId(this.id).subscribe(response => this.responseProdutos = response);
   }
 
-  clicked(): void{
-    console.log("teste")
+  listarTodosProdutos() {
+    this.produtoService.getProdutos().subscribe(response => {
+      this.responseProdutos = response;
+    });
   }
 
-  produtos: Produto[] = [
-    {
-      cd_produto: 300,
-      id_status_produto: 1,
-      id_categoria: 1,
-      id_tipo_produto: 1,
-      nm_fantasia: "CREME DENTAL SENSODYNE REPAIR & PROTECT",
-      nm_fabricante: "Buscopan",
-      vl_unidade: 13.59,
-      ds_peso: 1,
-      id_imagem: "https://i.imgur.com/uYGW8dc.jpg",
-      ds_produto: "ok"
-    }
-  ]
-
-  categorias: Categoria[] =[
-    {
-      id_categoria: 2,
-      ds_categoria: "Medicamentos"
-    }
-  ]
+  clicked(cd: number) {
+    this.router.navigateByUrl('categorias/produto', { skipLocationChange: true }).then(() => {
+      this.router.navigate([`categorias/produto/${cd}`]);
+    });
+  }
 
 }
