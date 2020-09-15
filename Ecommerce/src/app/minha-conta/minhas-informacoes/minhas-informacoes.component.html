@@ -1,0 +1,68 @@
+<app-header-secondary></app-header-secondary>
+
+<app-menu-minha-conta></app-menu-minha-conta>
+
+<div style="margin-left:25%;padding:1px">
+
+    <div class="row titulo">
+        <h3>MINHAS INFORMAÇÕES</h3>
+    </div>
+    <div class="row meio justify-content-center mb-5">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+            <form name="forminfo">
+                <div class="form-row">
+                    <div class="form-group col-md-6 col-12">
+                        <label for="inputName">Nome Completo*</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Nome e Sobrenome"
+                            maxlength="65" name="nmCliente" [(ngModel)]="request.nmCliente">
+                    </div>
+
+                    <div class="form-group col-md-6 col-12">
+                        <label for="inputCpf">CPF*</label>
+                        <input disabled type="text" class="form-control" id="inputCpf" placeholder="000.000.000-00"
+                            name="nrCpf" [(ngModel)]="request.nrCpf">
+                    </div>
+
+                    <div class="form-group col-md-3 col-6">
+                        <label for="inputDtNasc">Data de nascimento*</label>
+                        <input type="date" id="inputDtNasc" class="form-control" name="dtNasc"
+                            [(ngModel)]="request.dtNasc">
+                        <!-- type="date" -->
+                    </div>
+                    <div class="form-group col-md-3 col-6">
+                        <label for="inputGen">Gênero*</label>
+                        <select id="inputGen" class="form-control" name="dsGenero" [(ngModel)]="request.dsGenero">
+                            <option selected> </option>
+                            <option value="MS">Masculino</option>
+                            <option VALUE="FM">Feminino</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3 col-6">
+                        <label for="inputTel1">Telefone*</label>
+                        <input type="text" class="form-control" id="inputTel1" placeholder="(00) 0 0000-0000"
+                            mask="(00) 0000-0000 ||(00) 0 0000-0000" name="nrTelefone1"
+                            [(ngModel)]="request.nrTelefone1">
+                    </div>
+                    <div class="form-group col-md-3 col-6">
+                        <label for="inputTel2">Telefone 2</label>
+                        <input type="text" class="form-control" id="inputTel2" placeholder="(00) 0 0000-0000"
+                            mask="(00) 0000-0000 ||(00) 0 0000-0000" name="nrTelefone2"
+                            [(ngModel)]="request.nrTelefone2">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">E-mail*</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="exemplo@exemplo.com.br"
+                            name="dsEmail" [(ngModel)]="request.dsEmail">
+                    </div>
+                </div>
+                <div class="form-row float-right">
+                    <div class="my-4">
+                        <button type="submit" class="btn btn-success" (click)="updateDadosCliente()">Salvar
+                            Alterações</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer-secondary></app-footer-secondary>

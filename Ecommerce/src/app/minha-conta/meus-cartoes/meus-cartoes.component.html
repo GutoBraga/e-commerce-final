@@ -1,0 +1,84 @@
+<app-header-secondary></app-header-secondary>
+
+<app-menu-minha-conta></app-menu-minha-conta>
+
+<div style="margin-left:25%;padding:1px">
+
+    <div class="row titulo">
+        <h3>MEUS CARTOES</h3>
+    </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <p class="mb-0">
+                    <span>Cartão - </span>
+                </p>
+                <button class="btn btn-danger float-right">
+                    Excluir
+                </button>
+                <button class="btn btn-primary float-right" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Editar
+                </button>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <!--Inicio Form-->
+                    <div class="row">
+                        <div class="form-group col-md-6 col-12">
+                            <label for="inputNumeroCartao">Número do Cartão</label>
+                            <input type="text" class="form-control"
+                                placeholder="0000.0000.0000.0000">
+                        </div>
+                        <div class="form-group col-md-6 col-12">
+                            <label for="inputNomeCartao">Nome </label>
+                            <input type="text" class="form-control" id="inputNomeCartao" placeholder="Nome no cartão">
+                        </div>
+                    </div>
+                </div>
+
+                <!--Final Form -->
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-primary collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        Incluir Novo Cartão
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <!--Inicio Form-->
+                    <form name="forminfo">
+                        <div class="row">
+                            <div class="form-group col-md-6 col-12">
+                                <label for="inputNumeroCartao">Número do Cartão</label>
+                                <input type="text" class="form-control" id="inputNumeroCartao" name="request.nrNumeroCartao"
+                                    [(ngModel)]="request.nrNumeroCartao" required>
+                            </div>
+                            <div class="form-group col-md-6 col-12">
+                                <label for="inputNomeCartao">Nome </label>
+                                <input type="text" class="form-control" id="nmNomeTitular" name="request.nmNomeTitular"
+                                    [(ngModel)]="request.nmNomeTitular" placeholder="Nome no cartão">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="inclui my-4 justify-content-center">
+                    <button type="submit" class="btn btn-success" (click)="inserirCartao()">Salvar
+                        Cartão</button>
+                </div>
+                <!--Final Form -->
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer-secondary></app-footer-secondary>

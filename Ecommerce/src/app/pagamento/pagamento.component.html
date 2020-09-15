@@ -1,0 +1,244 @@
+<app-header-main></app-header-main>
+<app-menu-final-compra></app-menu-final-compra>
+<div class="col-lg-12 container">
+  <div class="row">
+    <div class="col-lg-6 box">
+      <br>
+      <h3><span>Formas de Pagamento</span></h3>
+      <br>
+      <div class="caixa">
+        <!--INICIO Collapse Pagamentos -->
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              <input type="radio" name="forma-de-pagamento" id="1" class="credito col-1" value=1
+                [(ngModel)]="request.idFormaPagamento">
+              <span>Crédito</span> &nbsp; &nbsp; &nbsp;
+              <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-credit-card-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4z"/>
+                <path fill-rule="evenodd" d="M0 7v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H3z"/>
+              </svg>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <div class="row pagamento-cartao">
+
+                </div>
+                <div *ngIf=""></div>
+                <br>
+                <!--INICIO Collapse Cartões -->
+
+                <div class="card">
+                  <div class="card-header" id="subOne">
+                    <h6 class="mb-0">
+                      <input type="radio" name="opcao-cartao" id="teste" class="credito col-1">
+                      **{{request.nrNumeroCartao | slice: 12}} &nbsp; {{request.nmNomeTitular}} &nbsp; &nbsp;<input
+                        class="col-lg-2" type="text" name="mes" placeholder="mês"> <input class="col-lg-2" type="text"
+                        name="ano" placeholder="ano"> &nbsp; &nbsp; &nbsp; &nbsp; <input class="col-lg-2" type="text"
+                        name="CVC" placeholder="CVC">
+                    </h6>
+                  </div>
+
+                  <div class="card-header" id="subTwo">
+                    <h6 class="mb-0">
+                      <input type="radio" name="opcao-cartao" id="teste" class="credito col-1">
+                      **{{request.nrNumeroCartao | slice: 12}} &nbsp; {{request.nmNomeTitular}} &nbsp; &nbsp;<input
+                        class="col-lg-2" type="text" name="mes" placeholder="mês"> <input class="col-lg-2" type="text"
+                        name="ano" placeholder="ano"> &nbsp; &nbsp; &nbsp; &nbsp; <input class="col-lg-2" type="text"
+                        name="CVC" placeholder="CVC">
+                    </h6>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="subThree">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed float-right" data-toggle="collapse"
+                          data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Inserir novo cartão
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+                      <div class="card-body">
+                        <div class="input-group">
+                          <div class="col-12">
+                            <span>Numero do Cartão</span>
+                            <div><input mask="0000.0000.0000.0000" type="text" id=nome class="form-control bg-light"
+                                placeholder="0000.0000.0000.0000" required>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                          <div class="col-12">
+                            <span>Nome do Títular</span>
+                            <div><input type="text" id=nome class="form-control bg-light" placeholder="" required>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+
+                        <div class="col-md-12 input-group vencimento">
+                          <div id="mes">
+                            <span>Mês</span>
+                            <div><input type="text" class="form-control bg-light" mask="00"></div>
+                          </div>
+                          <div id="ano">
+                            <span>Ano</span>
+                            <div><input type="text" class="form-control bg-light" mask="0000"></div>
+                          </div>
+                        </div>
+                        <br>
+
+                        <div class="input-group">
+                          <div class="col-4">
+                            <span>CVC</span>
+                            <div><input type="text" id=nome class="form-control bg-light" mask="000" placeholder=""
+                                required>
+                            </div>
+                          </div>
+                        </div>
+
+                        <br>
+                        <div class=" cadcheck input-group mb-3 col-12">
+                          <div class="input-group-prepend">
+                            <div class="checkCad input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                            <span> Salvar dados do cartão</span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <!--FIM  Collapse Cartões -->
+              </div>
+            </div>
+          </div>
+
+          <!-- INICIO Collapse Débito-->
+          <div class="card">
+            <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              <input type="radio" name="forma-de-pagamento" id="2" value="2" [(ngModel)]="request.idFormaPagamento"
+                class="credito col-1">
+              <span>Débito</span> &nbsp; &nbsp; &nbsp;
+              <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-credit-card-2-front-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+              </svg>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                <div>
+                  <div class="input-group">
+                    <div class="col-4">
+                      <span>Agência</span>
+                      <div><input type="text" id=nome class="form-control bg-light" mask="00000-0" placeholder=""
+                          required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <div class="col-4">
+                      <span>Conta</span>
+                      <div><input type="text" id=nome class="form-control bg-light" mask="00000-0" placeholder=""
+                          required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- FIM Collapse Débito-->
+              </div>
+            </div>
+          </div>
+
+          <!-- INICIO Collapse Boleto-->
+          <div class="card">
+            <div class="card-header" id="headingThree"data-toggle="collapse" data-target="#collapseThree"
+            aria-expanded="false" aria-controls="collapseThree">
+            <input type="radio" name="forma-de-pagamento" id="3" value="3" [(ngModel)]="request.idFormaPagamento"
+            class="credito col-1">
+            <span>Boleto</span> &nbsp; &nbsp; &nbsp;
+            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-file-text-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+            </svg>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <div>
+                  <span>Imprima o boleto bancário após a finalização do pedido e faça o
+                    pagamento para concluir sua compra.</span>      
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- FIM Collapse Boleto-->
+      </div>
+    </div>
+
+
+        <div class="col-lg-6 box">
+          <br>
+          <h3><span id="resumo">Resumo do Pedido</span></h3>
+          <br>
+          <br>
+          <br>
+
+          <div class="row detalhes ">
+            <div class="linha col-4">
+              <span>Produto</span>
+            </div>
+            <div class="linha col-4">
+              <span>Quantidade</span>
+            </div>
+            <div class="linha col-4">
+              <span>Valor</span>
+            </div>
+          </div>
+          <div *ngFor="let produto of produtos" class="row detalhes">
+            <div class="linha col-4">
+              <p>{{produto.nomeFantasia}}</p>
+            </div>
+            <div class="linha col-4">
+              <p>{{produto.qtProduto}}</p>
+            </div>
+            <div class="linha col-4">
+              <p>R$ {{produto.valorUnidade}}</p>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+          <div class="subtotal">
+            <h4>Subtotal</h4>
+            <h4> {{ calculaCesta() | currency: 'BRL' }}</h4>
+          </div>
+          <br>
+          <div class="frete d-flex justify-content-between">
+            <h4>Frete</h4>
+            <h4>GRÁTIS</h4>
+          </div>
+          <br>
+
+          <div class="total d-flex justify-content-between">
+            <h4>Total </h4>
+            <h4> {{ calculaCesta() | currency: 'BRL' }}</h4>
+          </div>
+          <br>
+          <div class="finalizar">
+            <button (click)="clicked()" type="submit" class="btn btnf btn-primary">FINALIZAR COMPRA</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-footer-main></app-footer-main>

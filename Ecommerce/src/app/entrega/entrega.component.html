@@ -1,0 +1,153 @@
+<app-header-main></app-header-main>
+<app-menu-final-compra></app-menu-final-compra>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center my-5">
+      <h1>Endereço a ser entregue</h1>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <!--Criar o ngFor para busca de endereços-->
+  <div class="card-header" id="subOne">
+    <p class="mb-0">
+      <input type="radio" name="opcao-cartao" id="teste" class="credito col-1" class="float"> &nbsp;
+      <span>Endereço:</span> {{ cliente.enderecos[0].dsEndereco }} Nº {{cliente.enderecos[0].nrEndereco}},
+      {{cliente.enderecos[0].dsBairro}} - {{cliente.enderecos[0].dsCidade}} - {{cliente.enderecos[0].sgEstado}}
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="subThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed float-right" data-toggle="collapse" data-target="#collapseThree"
+          aria-expanded="false" aria-controls="collapseThree">
+          Novo Endereço
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+      <div class="card-body">
+
+        <!--Inicio Form-->
+        <div class="col-lg-12 box">
+          <!--CEP-->
+          <div class="row">
+            <div class="input-group">
+              <div class="form-group col-2">
+                <label for="inputCep">CEP</label>
+                <div *ngIf="cliente.enderecos[0].nrCep != null && cliente.enderecos[0].nrCep != ''">
+                  <input type="text" class="form-control" id="inputCep" placeholder="Ex. 03553-000">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!--Logradouro-->
+            <div class="form-group col-md-6 col-12">
+              <label for="inputLogradouro">Logradouro</label>
+              <div *ngIf="cliente.enderecos[0].dsEndereco != null && cliente.enderecos[0].dsEndereco != ''">
+                <input type="text" class="form-control" id="inputLogradouro" placeholder="Ex. Rua">
+              </div>
+            </div>
+            <!--Numero-->
+            <div class="form-group col-2">
+              <label for="inputNumero">Numero</label>
+              <div *ngIf="cliente.enderecos[0].nrEndereco != null && cliente.enderecos[0].nrEndereco != ''">
+                <input type="text" class="form-control" id="inputNumero" placeholder="Ex. 000">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!--Complemento-->
+            <div class="form-group col-md-6 col-12">
+              <label for="inputComplemento">Complemento</label>
+              <div *ngIf="cliente.enderecos[0].nmCompleto === null || cliente.enderecos[0].nmCompleto === ''">
+                <input type="text" class="form-control" id="inputComplemento">
+              </div>
+            </div>
+          </div>
+
+          <!--Bairro-->
+          <div class="row">
+            <div class="form-group col-6">
+              <label for="inputBairro">Bairro</label>
+              <div *ngIf="cliente.enderecos[0].dsBairro != null && cliente.enderecos[0].dsBairro != ''">
+                <input type="text" class="form-control" id="inputBairro" placeholder="Ex. Jardim Flores">
+              </div>
+            </div>
+            <!--Cidade-->
+            <div class="form-group col-3">
+              <label for="inputCidade">Cidade</label>
+              <div *ngIf="cliente.enderecos[0].dsCidade != null && cliente.enderecos[0].dsCidade != ''">
+                <input type="text" class="form-control" id="inputCidade" placeholder="Ex. São Paulo">
+              </div>
+            </div>
+            <!--Estado-->
+            <div class="form-group col-3">
+              <label for="inputEstado">Estado</label>
+              <div *ngIf="cliente.enderecos[0].sgEstado != null && cliente.enderecos[0].sgEstado != ''">
+                <select id="inputEstado" class="form-control">
+                  <option selected></option>
+                  <option>AC</option>
+                  <option>AL</option>
+                  <option>AP</option>
+                  <option>AM</option>
+                  <option>BA</option>
+                  <option>CE</option>
+                  <option>ES</option>
+                  <option>ES</option>
+                  <option>GO</option>
+                  <option>MA</option>
+                  <option>MT</option>
+                  <option>MS</option>
+                  <option>MG</option>
+                  <option>PA</option>
+                  <option>PB</option>
+                  <option>PR</option>
+                  <option>PE</option>
+                  <option>PI</option>
+                  <option>RJ</option>
+                  <option>RN</option>
+                  <option>RS</option>
+                  <option>RO</option>
+                  <option>RR</option>
+                  <option>SC</option>
+                  <option>SP</option>
+                  <option>SE</option>
+                  <option>TO</option>
+                  <option>DF</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="my-4">
+            <button id="color" type="submit" class="btn btn-success" routerLink="cesta/pagamento">Salvar Novo
+              Endereço</button>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+    <!--Final Form -->
+
+    <!--INICIO Botão Continuar-->
+    <div class="row">
+      <div class="continuarBTN col-12">
+        <div class="my-4">
+          <button id="color" type="submit" class="btn btn-warning" routerLink="/pagamento">Continuar <svg width="1em"
+              height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+            </svg></button>
+        </div>
+      </div>
+    </div>
+    <!--FIM Botão Continuar-->
+
+    <app-footer-main></app-footer-main>
