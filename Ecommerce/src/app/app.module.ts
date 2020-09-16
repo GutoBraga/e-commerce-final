@@ -7,7 +7,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { FormRulesModule } from 'ng-form-rules';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, DatePipe } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -76,7 +76,7 @@ registerLocaleData(localePt, 'pt-BR');
     FormRulesModule,
     StorageServiceModule,
   ],
-  providers: [HttpClient, {
+  providers: [HttpClient, DatePipe, {
     provide: LOCALE_ID,
     useValue: "pt-BR"
   }],

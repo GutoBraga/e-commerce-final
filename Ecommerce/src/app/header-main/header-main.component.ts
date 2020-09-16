@@ -66,4 +66,9 @@ export class HeaderMainComponent implements OnInit {
       this.router.navigate([`categorias/${id}`]);
     });
   }
+
+  sair() {
+    localStorage.clear();
+    this.router.navigate(['']);
+  }
 }
