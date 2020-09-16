@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class CarouselItemsComponent implements OnInit {
 
+  carousel: boolean;
+
   responseProdutos: ResponseProdutos[];
   // responseProdutosMVendido: ResponseProdutos[];
   // responseProdutosPromo: ResponseProdutos[];
@@ -21,7 +23,7 @@ export class CarouselItemsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    // this.carousel = true;
     $(document).ready(function() {
       $('.autoWidth').lightSlider({
           item:4,
@@ -57,6 +59,7 @@ export class CarouselItemsComponent implements OnInit {
   listarProdutosCarousel() {
     this.carouselProdutosService.getProdutosDestaque().subscribe(response => {
       this.responseProdutos = response;
+      // this.carousel = false;
     });
     // this.carouselProdutosService.getProdutosMVendidos().subscribe(response => {
     //   this.responseProdutosMVendido = response;
