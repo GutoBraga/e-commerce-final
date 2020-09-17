@@ -16,6 +16,7 @@ import { DatePipe } from '@angular/common';
 })
 export class MinhasInformacoesComponent implements OnInit {
 
+  cliente: Cliente
   id: string;
   idCliente: number;
   cartao: Cartao;
@@ -64,23 +65,28 @@ export class MinhasInformacoesComponent implements OnInit {
     this.request.dtNasc = this.datepipe.transform(this.request.dtNasc, 'yyyy-MM-dd');
   }
 
-  private getCliente() {}
+  private getCliente() { }
 
+  //Método para atualização de dados cadastrais (OK)
   updateDadosCliente() {
 
-    //let upCliente = localStorage['cliente'] = JSON.stringify(this.cadastroService);
-
+    this.cliente = JSON.parse(localStorage['cliente']);
     console.log(this.request);
     this.cadastroService.updateDadosCadastrais(this.request).subscribe(response => {
-      this.clienteResponse = response;
-    });
 
-    /* console.log(this.request);
-    this.router.navigate(['/minha-conta']); */
-    alert('Dados alterados com sucesso!!!');
+      this.clienteResponse = response;
+      console.log(this.clienteResponse);
+      console.log('cliente');
+      this.cliente.nmCliente = this.request.nmCliente
+      localStorage.setItem('cliente', JSON.stringify(this.cliente));
+
+      alert('Dados alterados com sucesso!!!');
+      window.location.reload();
+    });
 
   }
 
+  //Métod para inserir dados cadastrais
   postEnderecoCliente() {
     this.cadastroService.postEndereco(this.idCliente, this.endereco).subscribe(response => {
       this.endereco = response;
@@ -90,5 +96,7 @@ export class MinhasInformacoesComponent implements OnInit {
 
     alert('Endereço cadastrado com sucesso!');
   }
+
+
 
 }

@@ -1,6 +1,6 @@
 import { ReactiveFormsRuleService } from 'ng-form-rules';
 import { Cartao } from './../cadastro/shared/cartao.model';
-import { Endereco, ClienteEnd } from './../cadastro/shared/endereco.model';
+import { Endereco, ResponseEnderecos, ClienteEnd } from './../cadastro/shared/endereco.model';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Cliente } from '../cadastro/shared/cliente.model';
@@ -58,6 +58,7 @@ export class MinhaContaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     this.request = JSON.parse(localStorage['cliente']);
     this.id = this.route.snapshot.paramMap.get('id');
     this.request.dtNasc = this.datepipe.transform(this.request.dtNasc, 'yyyy-MM-dd');
@@ -67,18 +68,25 @@ export class MinhaContaComponent implements OnInit {
 
   //Método para atualização de dados cadastrais (OK)
   updateDadosCliente() {
+
+    this.cliente = JSON.parse(localStorage['cliente']);
     console.log(this.request);
     this.cadastroService.updateDadosCadastrais(this.request).subscribe(response => {
+
       this.clienteResponse = response;
+      console.log(this.clienteResponse);
+      console.log('cliente');
+      localStorage.setItem('cliente', JSON.stringify(this.cliente));
     });
 
     alert('Dados alterados com sucesso!!!');
-
+    window.location.reload(); 
   }
 
   //Método para inclusão de endereços (OK)
   cliente: Cliente
   postEnderecoCliente() {
+
     this.cliente = JSON.parse(localStorage['cliente']);
     this.clienteId = this.cliente.idCliente;
     console.log(this.cliente)
@@ -93,9 +101,11 @@ export class MinhaContaComponent implements OnInit {
 
   //Método para atualização de endereços (ToDo)
   putEnderecoCliente() {
+
     this.endereco = JSON.parse(localStorage['endereco']); console.log(this.endereco);
     this.cadastroService.updateEnderecos(this.request).subscribe(response => {
       this.endereco = response;
+
       alert('Endereço alterado com sucesso!!!');
     })
   }
@@ -104,23 +114,38 @@ export class MinhaContaComponent implements OnInit {
   enderecoteste: ClienteEnd;
   //Método para buscar endereços
   getEnderecoCliente() {
+
     this.cliente = JSON.parse(localStorage['cliente']);
     this.clienteId = this.cliente.idCliente;
     this.cadastroService.getEndereco(this.clienteId).subscribe(response => {
       this.enderecoteste = response;
+
       console.log(this.enderecoteste);
       console.log(response);//idcliente+array endereço
-      console.log(this.enderecoteste.enderecos[0]);
-      this.primeiroEndereco = this.enderecoteste.enderecos[1];//Retorna o objeto endereço no array
-      this.primeiroEndereco = JSON.parse(localStorage['enderecosCliente']);
+      console.log(this.enderecoteste.enderecos[0]);//primeira posição do array de endereços
+      this.primeiroEndereco = this.enderecoteste.enderecos[0];//Retorna o objeto endereço no array
+      
     })
   }
 
+  //Método para exclusão de endereço (ToDo)
   deleteEnderecoCliente() {
+    if (confirm(`Deseja excluir o endereço selecionado?`)) {
 
-    this.cadastroService.deleteEndereco(this.clienteId).subscribe(response => {
-      /* this.enderecoteste = response; */
-    })
+      this.cliente = JSON.parse(localStorage['cliente']);
+      this.endereco = this.cliente.enderecos[0].idEndereco;
+      console.log(this.endereco);
+
+      this.cadastroService.deleteEndereco(this.clienteId, this.endereco).subscribe();
+      this.cliente.enderecos.splice(0, 1);//Exclui posição do array
+
+      //Reload no loalstorage após as alterações
+      localStorage.setItem('cliente', JSON.stringify(this.cliente));
+
+      alert("Endereço excluido com sucesso!!!");
+      window.location.reload();
+    }
+
   }
 
 }
