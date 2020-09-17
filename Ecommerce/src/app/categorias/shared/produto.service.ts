@@ -1,4 +1,3 @@
-import { ResponseFabricantes } from './fabricante.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,10 +14,6 @@ export class ProdutoService {
 
   private readonly APIDetalhes = 'api/produtos/codigo';
 
-  private readonly APIfiltroFabricante = 'api/fabricantes';
-
-  private readonly APIbuscaProdutoNome = 'api/produtos/nomeFantasia';
-
   public getProdutos() {
     return this.http.get<ResponseProdutos[]>(this.API);
   }
@@ -34,21 +29,4 @@ export class ProdutoService {
 
     return this.http.get<ResponseProdutos[]>(URL);
   }
-
-  public getFabricantesPorSubCategoria(id: string): Observable<ResponseFabricantes[]> {
-    const URL = `${this.APIfiltroFabricante}/${id}`;
-
-    return this.http.get<ResponseFabricantes[]>(URL);
-  }
-
-  public getFabricantesPorSubCategoriaPesquisa(query: string): Observable<ResponseFabricantes[]> {
-    const URL = `${this.APIfiltroFabricante}/${query}`;
-    return this.http.get<ResponseFabricantes[]>(URL);
-  }
-
-  public getProdutoNome(query: string): Observable<ResponseProdutos[]>{
-    const URL = `${this.APIbuscaProdutoNome}/${query}`;
-    return this.http.get<ResponseProdutos[]>(URL);
-  }
-  
 }

@@ -6,29 +6,29 @@ export interface Produtos {
     dsProduto: string;
     valorUnidade: number;
     categoriaProduto: {
-        idCategoriaProduto: number;
-        dsCategoriaProduto: string;
+      idCategoriaProduto: number;
+      dsCategoriaProduto: string;
     };
     subCategoriaProduto: {
-        idSubCategoria: number;
-        dsSubCategoria: string;
+      idSubCategoria: number;
+      dsSubCategoria: string;
     };
     imagens: [
-        {
-            cdProduto: number;
-            idImagem: number;
-            dsUrl: string;
-        }
+      {
+        cdProduto: number;
+        idImagem: number;
+        dsUrl: string;
+      }
     ];
     estoques: [
-        {
-            cdFilial: number;
-            qtEstoque: number;
-            qtEmpenho: number;
-        }
+      {
+        cdFilial: number;
+        qtEstoque: number;
+        qtEmpenho: number;
+      }
     ]
-}
+  }
 
-export interface ResponseProdutos {
-    produtos: Produtos[];
-}
+  export interface ResponseProdutos {
+      produtos: Produtos[];
+  }

@@ -145,6 +145,39 @@
     float: right;
 }
 
+.alinha {
+    display: flex;
+    justify-content: space-between;
+}
+.p{
+    margin-left: 20px;
+}
+
+.remove{
+    float: right;
+}
+.desaparece{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline: none;
+
+}
+
+.desaparece:hover {
+    background-color: transparent;
+    color: rgb(165, 6, 6);
+
+}
+
+.desaparece:active {
+  background-color: transparent;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .desaparece{
     background-color: Transparent;
     background-repeat:no-repeat;

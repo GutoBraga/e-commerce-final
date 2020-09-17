@@ -1,5 +1,9 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ResponseProdutos } from './../../categorias/shared/produto.model';
+import { Produto } from './../../categorias/categorias.model';
 import { Injectable } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,56 +16,36 @@ export class CestaService {
 
   tamanho;
 
-  constructor(private http: HttpClient) { 
+
+  constructor(private http: HttpClient) {
     this.itens = (JSON.parse(localStorage.getItem('produtos')));
+    /* this.itens = this.itens==null?[]:this.itens; same energy Y */
 
     if (this.itens == null) {
       this.itens = [];
     }
-    this.itens.forEach(item =>{
-      if(!item.qtProduto){
-        item.qtProduto = 1;
-      }
-    });
+
+    console.log(this.itens);
   }
 
-  addCesta(produto) {
+  addCesta(responseProdutos) {
+    console.log(responseProdutos)
+    /*         this.itens.push(responseProdutos)
+            console.log(responseProdutos) */
+    const produto = responseProdutos[0];
+    console.log(produto)
     let temNaLista = false;
-    let posicaoLista = null;
-
-    this.itens.forEach((item, index) => {
+    this.itens.forEach(item => {
       if (item.cdProduto == produto.cdProduto) {
         temNaLista = true;
-        posicaoLista = index;
       }
     })
-
+    console.log(temNaLista);
     if (!temNaLista) {
-      produto.qtProduto = 1;
       this.itens.push(produto);
-      localStorage.setItem('produtos', JSON.stringify(this.itens));
-    } else {
-      this.alteraCesta(posicaoLista, 1);
     }
-  }
-
-  histAddCesta(responseProdutos) {
-    for (let i = 0; i <= responseProdutos.length; i++) {
-      const produto = responseProdutos[i];
-      let temNaLista = false;
-      let posicaoLista = null;
-      this.itens.forEach(item => {
-        if (item.cdProduto == produto.cdProduto) {
-          temNaLista = true;
-        }
-      })      
-      if (!temNaLista) {
-        this.itens.push(produto);
-        localStorage.setItem('produtos', JSON.stringify(this.itens));
-      }else{
-        this.alteraCesta(posicaoLista, 1);
-      }
-    }
+    localStorage.setItem('produtos', JSON.stringify(this.itens));
+    console.log(this.itens);
   }
 
   public getCesta() {
@@ -81,7 +65,8 @@ export class CestaService {
   }
 
   calculaCesta() {
-    this.totalCompra = this.itens.reduce((totalCompra, soma) => totalCompra + (soma.valorUnidade * soma.qtProduto), 0);
+    this.totalCompra = this.itens.reduce((totalCompra, soma) => totalCompra + soma.valorUnidade, 0);
+    console.log(this.totalCompra)
     return this.totalCompra;
    }
 
@@ -90,16 +75,4 @@ export class CestaService {
      return this.tamanho;
    }
 
-   alteraCesta(index, alt){
-    if (alt > 0) { 
-      this.itens[index].qtProduto += 1;
-    } else {
-      const god = this.itens[index].qtProduto - 1;
-      if (god > 0) {
-        this.itens[index].qtProduto -= 1;        
-      }
-    }  
-    this.calculaCesta();
-    localStorage.setItem('produtos', JSON.stringify(this.itens));
-   }
 }
