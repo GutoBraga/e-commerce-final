@@ -1,11 +1,12 @@
-import { Cartao } from './../../cadastro/shared/cartao.model';
+import { Cartao, CartaoCliente } from './../../cadastro/shared/cartao.model';
 import { Endereco } from './../../cadastro/shared/endereco.model';
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/cadastro/shared/cliente.model';
+import { Cliente } from '../../cadastro/shared/cliente.model';
 import { AlterarInfoService } from '../shared/alterar-info.service';
 import { FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ReactiveFormsRuleService } from 'ng-form-rules';
+
 
 @Component({
   selector: 'app-meus-cartoes',
@@ -16,6 +17,7 @@ export class MeusCartoesComponent implements OnInit {
 
   cliente: Cliente;
   endereco: Endereco;
+  clienteId: number;
 
   request: Cartao = {
     idCartaoCredito: null,
@@ -34,6 +36,8 @@ export class MeusCartoesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCliente();
+    this.buscarCartaoCliente();
+    console.log("oi");
   }
 
   private getCliente() {
@@ -46,6 +50,32 @@ export class MeusCartoesComponent implements OnInit {
     this.alterarInfoService.postCartao(this.cliente.idCliente, this.request).subscribe();
     alert("Cartão Inserido com Sucesso");
     console.log(this.request)
+  }
+
+  apagarCartao(index) {
+    console.log(this.cliente.cartoesCreditoDTO)
+    // this.cliente = JSON.parse(localStorage['cliente']);
+    this.alterarInfoService.deleteCartao(this.primeiroCartao).subscribe();
+    console.log(this.primeiroCartao);
+
+       this.cliente.cartoesCreditoDTO.splice(index, 1);//Exclui posição do array
+    // localStorage.setItem('cliente',JSON.stringify(this.cliente));
+    alert("Cartão excluido com Sucesso");
+    // window.location.reload();
+  }
+
+  primeiroCartao: any;
+  cartoes: CartaoCliente;
+  //Método para buscar cartão
+  buscarCartaoCliente() {
+    this.cliente = JSON.parse(localStorage['cliente']);
+    this.alterarInfoService.getCartao(this.cliente.idCliente).subscribe(response => {
+      this.cartoes = response;
+      this.primeiroCartao = this.cartoes.cartoesCreditoDTO[0];//Retorna o objeto cartão no array
+      console.log(this.primeiroCartao);
+      console.log(this.request.idCartaoCredito);
+
+    })
   }
 
 }

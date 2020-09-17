@@ -1,3 +1,9 @@
+export interface CartaoCliente {
+
+    idCliente: number;
+    cartoesCreditoDTO: Cartao[];
+}
+
 export interface Cartao {
     idCartaoCredito: number;
     nrNumeroCartao: string;
