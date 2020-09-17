@@ -1,0 +1,52 @@
+.formLogin {
+  /*Formulário de login*/
+  margin-top: 40px;
+  margin-left: 90px;
+}
+.retira-loja {
+  /*Imagem receber no endereço*/
+  max-width: 40px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+}
+
+.recebe-endereco {
+  /*Imagem receber na loja*/
+  max-width: 40px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+}
+
+.logosSuperiores {
+  margin-right: 15px;
+  margin-top: 5px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.text-menu{
+  color: var(--cinzatexto);
+}
+
+.thumbnail{
+  margin-left: 50px;
+}
+/* .salva-endereco{
+  margin-top: 30px;
+  margin-left: 900px;
+} */
+.adccartao{
+  margin-left: 100px;
+}
+.alteracadastro
+{
+  margin-right: 160px;
+}
+.salvacartao{
+  margin-left: 10px;
+}
+.selectendereco{
+  margin-left: 20px;
+}
