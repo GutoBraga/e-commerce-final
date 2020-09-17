@@ -12,28 +12,25 @@
             <form name="forminfo">
                 <div class="row">
                     <div class="form-group">
-                        <label for="inputSenha">Senha Atual </label>&nbsp;&nbsp;
-                        <input id="inputSenha" class="form-control" name="senhaAtual" [(ngModel)]="request.senhaAtual" type="password">
-                        <pre>{{request.senhaAtual}}</pre>
+                        <label>Senha Atual </label>&nbsp;&nbsp;
+                        <input type="text">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group">
-                        <label for="inputNovaSenha">Nova Senha </label>&nbsp;&nbsp;
-                        <input id="inputNovaSenha" class="form-control"  name="novaSenha" [(ngModel)]="request.novaSenha" type="password">
-                        {{request.novaSenha}}
+                        <label>Nova Senha </label>&nbsp;&nbsp;
+                        <input type="text">
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <div class="form-group">
-                        <label for="inputConfirmar">Confirmar Nova Senha </label> &nbsp;&nbsp;
-                        <input id="inputConfirmar" class="form-control" name="confirmarSenha" [(ngModel)]="request.confirmarSenha" type="password">
-                        {{request.confirmarSenha}}
+                        <label>Confirmar Nova Senha </label> &nbsp;&nbsp;
+                        <input type="text">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-4 justify-content-center">
                         <div class="my-4">
-                            <button (click)="alterarSenha()" type="submit" class="btn btn-success">Alterar</button>
+                            <button type="submit" class="btn btn-success">Alterar</button>
                         </div>
                     </div>
                 </div>

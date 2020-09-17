@@ -10,14 +10,16 @@
 
     <div id="accordion">
         <div class="card">
-            <div class="card-header" id="headingOne">
-                <p class="mb-0">
-                    <span>Endereço:</span> {{ cliente.enderecos[0].dsEndereco }} Nº
-                    {{cliente.enderecos[0].nrEndereco}},
-                    {{cliente.enderecos[0].dsBairro}} - {{cliente.enderecos[0].dsCidade}} -
-                    {{cliente.enderecos[0].sgEstado}}
+            <div class="card-header" id="headingOne"
+                *ngFor="let enderecosCliente of enderecoteste.enderecos;  let i = index">
+                <p class="mb-0" *ngIf="primeiroEndereco">
+                    <!--*ngFor="let enderecosCliente of enderecos; let i = index"-->
+                    <span>Endereço:</span> {{ enderecosCliente.dsEndereco }} Nº
+                    {{enderecosCliente.nrEndereco}},
+                    {{enderecosCliente.dsBairro}} - {{enderecosCliente.dsCidade}} -
+                    {{enderecosCliente.sgEstado}}
                 </p>
-                <button class="btn btn-danger float-right">
+                <button class="btn btn-danger float-right" (click)="deleteEnderecoCliente(enderecosCliente.idEndereco)">
                     Excluir
                 </button>
                 <button class="btn btn-primary float-right" data-toggle="collapse" data-target="#collapseOne"
@@ -35,9 +37,10 @@
                             <div class="input-group">
                                 <div class="form-group col-2">
                                     <label for="inputCep">CEP</label>
-                                    <div *ngIf="cliente.enderecos[0].nrCep != null && cliente.enderecos[0].nrCep != ''">
+                                    <div>
                                         <input type="text" class="form-control" id="inputCep"
-                                            placeholder="Ex. 03553-000">
+                                            placeholder="Ex. 03553-000" name="nrCep"
+                                            [(ngModel)]="primeiroEndereco.nrCep">
                                     </div>
                                 </div>
                             </div>
@@ -47,17 +50,17 @@
                             <!--Logradouro-->
                             <div class="form-group col-md-6 col-12">
                                 <label for="inputLogradouro">Logradouro</label>
-                                <div
-                                    *ngIf="cliente.enderecos[0].dsEndereco != null && cliente.enderecos[0].dsEndereco != ''">
-                                    <input type="text" class="form-control" id="inputLogradouro" placeholder="Ex. Rua">
+                                <div>
+                                    <input type="text" class="form-control" id="inputLogradouro" placeholder="Ex. Rua"
+                                        name="dsEndereco" [(ngModel)]="primeiroEndereco.dsEndereco">
                                 </div>
                             </div>
                             <!--Numero-->
                             <div class="form-group col-2">
                                 <label for="inputNumero">Numero</label>
-                                <div
-                                    *ngIf="cliente.enderecos[0].nrEndereco != null && cliente.enderecos[0].nrEndereco != ''">
-                                    <input type="text" class="form-control" id="inputNumero" placeholder="Ex. 000">
+                                <div>
+                                    <input type="text" class="form-control" id="inputNumero" placeholder="Ex. Rua"
+                                        name="nrEndereco" [(ngModel)]="primeiroEndereco.nrEndereco">
                                 </div>
                             </div>
                         </div>
@@ -66,9 +69,9 @@
                             <!--Complemento-->
                             <div class="form-group col-md-6 col-12">
                                 <label for="inputComplemento">Complemento</label>
-                                <div
-                                    *ngIf="cliente.enderecos[0].nmCompleto === null || cliente.enderecos[0].nmCompleto === ''">
-                                    <input type="text" class="form-control" id="inputComplemento">
+                                <div>
+                                    <input type="text" class="form-control" id="inputComplemento" name="nmCompleto"
+                                        [(ngModel)]="primeiroEndereco.nmCompleto">
                                 </div>
                             </div>
                         </div>
@@ -77,27 +80,26 @@
                         <div class="row">
                             <div class="form-group col-6">
                                 <label for="inputBairro">Bairro</label>
-                                <div
-                                    *ngIf="cliente.enderecos[0].dsBairro != null && cliente.enderecos[0].dsBairro != ''">
+                                <div>
                                     <input type="text" class="form-control" id="inputBairro"
-                                        placeholder="Ex. Jardim Flores">
+                                        placeholder="Ex. Jardim Flores" name="dsBairro"
+                                        [(ngModel)]="primeiroEndereco.dsBairro">
                                 </div>
                             </div>
                             <!--Cidade-->
                             <div class="form-group col-3">
                                 <label for="inputCidade">Cidade</label>
-                                <div
-                                    *ngIf="cliente.enderecos[0].dsCidade != null && cliente.enderecos[0].dsCidade != ''">
-                                    <input type="text" class="form-control" id="inputCidade"
-                                        placeholder="Ex. São Paulo">
+                                <div>
+                                    <input type="text" class="form-control" id="inputCidade" placeholder="Ex. São Paulo"
+                                        name="dsCidade" [(ngModel)]="primeiroEndereco.dsCidade">
                                 </div>
                             </div>
                             <!--Estado-->
                             <div class="form-group col-3">
                                 <label for="inputEstado">Estado</label>
-                                <div
-                                    *ngIf="cliente.enderecos[0].sgEstado != null && cliente.enderecos[0].sgEstado != ''">
-                                    <select id="inputEstado" class="form-control">
+                                <div>
+                                    <select id="inputEstado" class="form-control" name="sgEstado"
+                                        [(ngModel)]="primeiroEndereco.sgEstado">
                                         <option selected></option>
                                         <option>AC</option>
                                         <option>AL</option>
@@ -132,7 +134,8 @@
                             </div>
                         </div>
                         <div class="my-4">
-                            <button id="color" type="submit" class="btn btn-success" routerLink="cesta/pagamento">Salvar
+                            <button id="color" type="submit" class="btn btn-success"
+                                (click)="putEnderecoCliente()">Salvar
                                 Alterações</button>
                         </div>
                     </div>
@@ -161,8 +164,9 @@
                         <div class="input-group">
                             <div class="form-group col-2">
                                 <label for="inputCep">CEP</label>
-                                <div *ngIf="cliente.enderecos[0].nrCep != null && cliente.enderecos[0].nrCep != ''">
-                                    <input type="text" class="form-control" id="inputCep" placeholder="Ex. 03553-000">
+                                <div>
+                                    <input type="text" class="form-control" id="inputCep" placeholder="Ex. 03553-000"
+                                        name="nrCep" [(ngModel)]="enderecoInsere.nrCep">
                                 </div>
                             </div>
                         </div>
@@ -172,17 +176,17 @@
                         <!--Logradouro-->
                         <div class="form-group col-md-6 col-12">
                             <label for="inputLogradouro">Logradouro</label>
-                            <div
-                                *ngIf="cliente.enderecos[0].dsEndereco != null && cliente.enderecos[0].dsEndereco != ''">
-                                <input type="text" class="form-control" id="inputLogradouro" placeholder="Ex. Rua">
+                            <div>
+                                <input type="text" class="form-control" id="inputLogradouro" placeholder="Ex. Rua"
+                                    name="dsEndereco" [(ngModel)]="enderecoInsere.dsEndereco">
                             </div>
                         </div>
                         <!--Numero-->
                         <div class="form-group col-2">
                             <label for="inputNumero">Numero</label>
-                            <div
-                                *ngIf="cliente.enderecos[0].nrEndereco != null && cliente.enderecos[0].nrEndereco != ''">
-                                <input type="text" class="form-control" id="inputNumero" placeholder="Ex. 000">
+                            <div>
+                                <input type="text" class="form-control" id="inputNumero" placeholder="Ex. Rua"
+                                    name="nrEndereco" [(ngModel)]="enderecoInsere.nrEndereco">
                             </div>
                         </div>
                     </div>
@@ -191,9 +195,9 @@
                         <!--Complemento-->
                         <div class="form-group col-md-6 col-12">
                             <label for="inputComplemento">Complemento</label>
-                            <div
-                                *ngIf="cliente.enderecos[0].nmCompleto === null || cliente.enderecos[0].nmCompleto === ''">
-                                <input type="text" class="form-control" id="inputComplemento">
+                            <div>
+                                <input type="text" class="form-control" id="inputComplemento" name="nmCompleto"
+                                    [(ngModel)]="enderecoInsere.nmCompleto">
                             </div>
                         </div>
                     </div>
@@ -202,23 +206,25 @@
                     <div class="row">
                         <div class="form-group col-6">
                             <label for="inputBairro">Bairro</label>
-                            <div *ngIf="cliente.enderecos[0].dsBairro != null && cliente.enderecos[0].dsBairro != ''">
-                                <input type="text" class="form-control" id="inputBairro"
-                                    placeholder="Ex. Jardim Flores">
+                            <div>
+                                <input type="text" class="form-control" id="inputBairro" placeholder="Ex. Jardim Flores"
+                                    name="dsBairro" [(ngModel)]="enderecoInsere.dsBairro">
                             </div>
                         </div>
                         <!--Cidade-->
                         <div class="form-group col-3">
                             <label for="inputCidade">Cidade</label>
-                            <div *ngIf="cliente.enderecos[0].dsCidade != null && cliente.enderecos[0].dsCidade != ''">
-                                <input type="text" class="form-control" id="inputCidade" placeholder="Ex. São Paulo">
+                            <div>
+                                <input type="text" class="form-control" id="inputCidade" placeholder="Ex. São Paulo"
+                                    name="dsCidade" [(ngModel)]="enderecoInsere.dsCidade">
                             </div>
                         </div>
                         <!--Estado-->
                         <div class="form-group col-3">
                             <label for="inputEstado">Estado</label>
-                            <div *ngIf="cliente.enderecos[0].sgEstado != null && cliente.enderecos[0].sgEstado != ''">
-                                <select id="inputEstado" class="form-control">
+                            <div>
+                                <select id="inputEstado" class="form-control" name="sgEstado"
+                                    [(ngModel)]="enderecoInsere.sgEstado">
                                     <option selected></option>
                                     <option>AC</option>
                                     <option>AL</option>
@@ -253,7 +259,8 @@
                         </div>
                     </div>
                     <div class="inclui my-4">
-                        <button id="color" type="submit" class="btn btn-success" routerLink="cesta/pagamento">Salvar
+                        <button id="color" type="submit" class="btn btn-success" routerLink="cesta/pagamento"
+                            (click)="postEnderecoCliente()">Salvar
                             Endereço</button>
                     </div>
                 </div>
