@@ -52,16 +52,16 @@ export class MeusCartoesComponent implements OnInit {
     console.log(this.request)
   }
 
-  apagarCartao(index) {
+  apagarCartao(idCartaoCredito: number) {
     console.log(this.cliente.cartoesCreditoDTO)
-    // this.cliente = JSON.parse(localStorage['cliente']);
-    this.alterarInfoService.deleteCartao(this.primeiroCartao).subscribe();
+    this.cliente = JSON.parse(localStorage['cliente']);
+    this.alterarInfoService.deleteCartao(idCartaoCredito).subscribe();
     console.log(this.primeiroCartao);
 
-       this.cliente.cartoesCreditoDTO.splice(index, 1);//Exclui posição do array
-    // localStorage.setItem('cliente',JSON.stringify(this.cliente));
+       this.cliente.cartoesCreditoDTO.splice(0, 1);//Exclui posição do array
+    localStorage.setItem('cliente',JSON.stringify(this.cliente));
     alert("Cartão excluido com Sucesso");
-    // window.location.reload();
+    window.location.reload();
   }
 
   primeiroCartao: any;
