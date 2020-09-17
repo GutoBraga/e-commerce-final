@@ -50,8 +50,8 @@ export class CadastroService {
   }
 
   //Método de excluir endereços
-  deleteEndereco(id: number): Observable<Endereco> {
-    const URL = `${this.APIDeleteEndereco}/${id}`;
+  deleteEndereco(idCliente: number, idEndereco: number): Observable<Endereco> {
+    const URL = `${this.APIDeleteEndereco}/${idCliente}/${idEndereco}`;
     return this.http.delete<Endereco>(URL);
   }
 }
